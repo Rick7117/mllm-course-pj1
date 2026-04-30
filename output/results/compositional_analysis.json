@@ -1,0 +1,323 @@
+{
+  "CLIP": [
+    {
+      "pair": [
+        "red bus",
+        "blue bus"
+      ],
+      "similarity": 0.7058625000701373,
+      "nearest_dataset_captions_for_first": [
+        "A red toilet in a very small bathroom.",
+        "A stop sign is mounted upside-down on it's post. ",
+        "Cars, truck and carriages are traveling on the road",
+        "a stop sign sittin on a pole that is somewhat broken ",
+        "A couple of pieces of very nice looking luggage."
+      ],
+      "nearest_dataset_captions_for_second": [
+        "a blue bike parked on a side walk ",
+        "A bus traveling on a freeway next to other traffic.",
+        "Cars, truck and carriages are traveling on the road",
+        "A white bathroom is shown with a blue towel.",
+        "A group of people standing outside of a bus."
+      ]
+    },
+    {
+      "pair": [
+        "two dogs",
+        "one dog"
+      ],
+      "similarity": 0.7222955703026441,
+      "nearest_dataset_captions_for_first": [
+        "Two brown and white dogs running in a park. ",
+        "a close up of a dog near a bowl",
+        "A couple of pieces of very nice looking luggage.",
+        "a couple of stuffed bears are on a bed",
+        "there are two large boats that are in the water "
+      ],
+      "nearest_dataset_captions_for_second": [
+        "a close up of a dog near a bowl",
+        "A very nice living room that is very clean.",
+        "there is a cat that is drinking out of the toilet",
+        "some little stones sitting around a dime ",
+        "some elephants and one is by some water"
+      ]
+    },
+    {
+      "pair": [
+        "man behind horse",
+        "man riding horse"
+      ],
+      "similarity": 0.8322375537554407,
+      "nearest_dataset_captions_for_first": [
+        "a man glares as other people behind him look on",
+        "A group of men traveling on horses in the water,",
+        "A couple of jockey's riding the horses through the beach.",
+        "a flock of goats and some men watching them",
+        "There is a white horse pulling a trolley behind it."
+      ],
+      "nearest_dataset_captions_for_second": [
+        "A man flying through the air while riding a bike.",
+        "A group of men traveling on horses in the water,",
+        "A couple of jockey's riding the horses through the beach.",
+        "People are walking and riding motorcycles on the street",
+        "A person in a helmet is riding a skateboard."
+      ]
+    },
+    {
+      "pair": [
+        "cat on couch",
+        "cat under couch"
+      ],
+      "similarity": 0.7863778024602305,
+      "nearest_dataset_captions_for_first": [
+        "a cat laying on top of a chair in the living room ",
+        "A cute cat laying down in a sink.",
+        "A cat curiously looking sideways at a television.",
+        "A cat sitting in front of a large computer monitor.",
+        "A very nice living room that is very clean."
+      ],
+      "nearest_dataset_captions_for_second": [
+        "a cat laying on top of a chair in the living room ",
+        "there is a cat that is drinking out of the toilet",
+        "A cute cat laying down in a sink.",
+        "A cat curiously looking sideways at a television.",
+        "A cat laying on clothes that are in a suitcase. "
+      ]
+    },
+    {
+      "pair": [
+        "black cat",
+        "black dog"
+      ],
+      "similarity": 0.8001054912918232,
+      "nearest_dataset_captions_for_first": [
+        "A black cat is sitting in a bathroom sink.",
+        "A black cat sits in a bathroom sink.",
+        "there is a cat that is drinking out of the toilet",
+        "A very nice living room that is very clean.",
+        "A cat sitting in front of a large computer monitor."
+      ],
+      "nearest_dataset_captions_for_second": [
+        "a close up of a dog near a bowl",
+        "A black cat is sitting in a bathroom sink.",
+        "A black cat sits in a bathroom sink.",
+        "A black goat with its mouth open next to a white goat. ",
+        "A black toilet in a tiled public bathroom stall."
+      ]
+    }
+  ],
+  "BLIP": [
+    {
+      "pair": [
+        "red bus",
+        "blue bus"
+      ],
+      "similarity": 0.783326473733703,
+      "nearest_dataset_captions_for_first": [
+        "A red toilet in a very small bathroom.",
+        "A group of people standing outside of a bus.",
+        "A group of people standing next to a double decker bus.",
+        "A bus traveling on a freeway next to other traffic.",
+        "Two buses parked in a parking lot next to cars."
+      ],
+      "nearest_dataset_captions_for_second": [
+        "A blue fire hydrant posed on a street corner in a city.",
+        "a blue bike parked on a side walk ",
+        "A group of people standing outside of a bus.",
+        "A man in a blue coat skiing through a snowy field. ",
+        "A group of people standing next to a double decker bus."
+      ]
+    },
+    {
+      "pair": [
+        "two dogs",
+        "one dog"
+      ],
+      "similarity": 0.8236485853164498,
+      "nearest_dataset_captions_for_first": [
+        "Two brown and white dogs running in a park. ",
+        "A man standing next to a dog on the ground.",
+        "Two men being drug on buggies by dogs.",
+        "there are two large boats that are in the water ",
+        "A dog is chewing on a soccer ball."
+      ],
+      "nearest_dataset_captions_for_second": [
+        "A dog is chewing on a soccer ball.",
+        "A small dog laying on a bed next to a laptop computer.",
+        "A brown dog hanging it's head out of a car window.",
+        "A man standing next to a dog on the ground.",
+        "a close up of a dog near a bowl"
+      ]
+    },
+    {
+      "pair": [
+        "man behind horse",
+        "man riding horse"
+      ],
+      "similarity": 0.888684929548035,
+      "nearest_dataset_captions_for_first": [
+        "A man that is standing in the dirt with a bat.",
+        "A group of horses are grazing in the field.",
+        "A brown horse standing next to a woman in front of a house.",
+        "A baseball player holding a bat while standing on a field.",
+        "A man holding a baseball bat while standing on a baseball field."
+      ],
+      "nearest_dataset_captions_for_second": [
+        "A man flying through the air while riding a skateboard.",
+        "A group of men traveling on horses in the water,",
+        "A couple of jockey's riding the horses through the beach.",
+        "A man flying through the air while riding a bike.",
+        "A man flying through the air while riding skis."
+      ]
+    },
+    {
+      "pair": [
+        "cat on couch",
+        "cat under couch"
+      ],
+      "similarity": 0.7510188417189858,
+      "nearest_dataset_captions_for_first": [
+        "a cat laying on top of a chair in the living room ",
+        "A very nice living room that is very clean.",
+        "A living room with a couch and chair.",
+        "A living room with a fire place and furniture.",
+        "a living room that has some couches and tables in it"
+      ],
+      "nearest_dataset_captions_for_second": [
+        "a cat laying on top of a chair in the living room ",
+        "there is a cat that is drinking out of the toilet",
+        "A cat sitting beside a laptop on a desk.",
+        "A living room with a couch and chair.",
+        "A living room with a fire place and furniture."
+      ]
+    },
+    {
+      "pair": [
+        "black cat",
+        "black dog"
+      ],
+      "similarity": 0.7846960328921709,
+      "nearest_dataset_captions_for_first": [
+        "A black cat is sitting in a bathroom sink.",
+        "A black cat sits in a bathroom sink.",
+        "there is a cat that is drinking out of the toilet",
+        "A cute cat laying down in a sink.",
+        "A cat sitting beside a laptop on a desk."
+      ],
+      "nearest_dataset_captions_for_second": [
+        "A black cat is sitting in a bathroom sink.",
+        "A man standing next to a dog on the ground.",
+        "A black cat sits in a bathroom sink.",
+        "a close up of a dog near a bowl",
+        "A dog is chewing on a soccer ball."
+      ]
+    }
+  ],
+  "BLIP2": [
+    {
+      "pair": [
+        "red bus",
+        "blue bus"
+      ],
+      "similarity": 0.7325368389371094,
+      "nearest_dataset_captions_for_first": [
+        "A bus traveling on a freeway next to other traffic.",
+        "a white and red plane parked on a tarmac",
+        "A bus traveling down a curvy road behind a black car.",
+        "A political candidate advertisement on the side of a coach bus.",
+        "A bathroom is very colorful with blue yellow and red."
+      ],
+      "nearest_dataset_captions_for_second": [
+        "A bathroom is very colorful with blue yellow and red.",
+        "a blue bike parked on a side walk ",
+        "A pretty red white and blue parking meter by some shrubs.",
+        "A white bathroom is shown with a blue towel.",
+        "A bus traveling down a curvy road behind a black car."
+      ]
+    },
+    {
+      "pair": [
+        "two dogs",
+        "one dog"
+      ],
+      "similarity": 0.70792004485633,
+      "nearest_dataset_captions_for_first": [
+        "Two men being drug on buggies by dogs.",
+        "there are two stuffed animals on a wooden bench",
+        "Two brown and white dogs running in a park. ",
+        "A dog is chewing on a soccer ball.",
+        "Two naked babies on training toilets in a bathroom"
+      ],
+      "nearest_dataset_captions_for_second": [
+        "A dog is chewing on a soccer ball.",
+        "A dog and cat lying  together on an orange couch. ",
+        "A hot dog and a bun with some mustard.",
+        "A woman holding a hot dog on the street.",
+        "A woman standing next to a  brown and white dog."
+      ]
+    },
+    {
+      "pair": [
+        "man behind horse",
+        "man riding horse"
+      ],
+      "similarity": 0.8130511249889457,
+      "nearest_dataset_captions_for_first": [
+        "There is a white horse pulling a trolley behind it.",
+        "a man glares as other people behind him look on",
+        "A woman smiles from behind the book she has been reading.",
+        "A picture of a recently married couple displayed behind glass.",
+        "A pitcher holds his arm far behind him during a pitch."
+      ],
+      "nearest_dataset_captions_for_second": [
+        "A man flying through the air while riding a bike.",
+        "A man flying through the air while riding skis.",
+        "People are walking and riding motorcycles on the street",
+        "A man flying through the air while riding a skateboard.",
+        "A couple of jockey's riding the horses through the beach."
+      ]
+    },
+    {
+      "pair": [
+        "cat on couch",
+        "cat under couch"
+      ],
+      "similarity": 0.8615749480299733,
+      "nearest_dataset_captions_for_first": [
+        "A dog and cat lying  together on an orange couch. ",
+        "A cat sitting beside a laptop on a desk.",
+        "A cat laying on clothes that are in a suitcase. ",
+        "Two people play video games while sitting on a couch.",
+        "A cat sitting on top of a banana tree."
+      ],
+      "nearest_dataset_captions_for_second": [
+        "A dog and cat lying  together on an orange couch. ",
+        "Three teddy bears laying in bed under the covers.",
+        "A living room with a couch and chair.",
+        "A cat curiously looking sideways at a television.",
+        "A cute cat laying down in a sink."
+      ]
+    },
+    {
+      "pair": [
+        "black cat",
+        "black dog"
+      ],
+      "similarity": 0.8009252996306397,
+      "nearest_dataset_captions_for_first": [
+        "A black cat sits in a bathroom sink.",
+        "A black cat is sitting in a bathroom sink.",
+        "A cat curiously looking sideways at a television.",
+        "A cute cat laying down in a sink.",
+        "A dog and cat lying  together on an orange couch. "
+      ],
+      "nearest_dataset_captions_for_second": [
+        "A black cat sits in a bathroom sink.",
+        "A herd of black and white cows eating dry grass.",
+        "A black cat is sitting in a bathroom sink.",
+        "A woman standing next to a  brown and white dog.",
+        "A dog and cat lying  together on an orange couch. "
+      ]
+    }
+  ]
+}

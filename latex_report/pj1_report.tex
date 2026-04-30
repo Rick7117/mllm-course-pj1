@@ -1,0 +1,699 @@
+\documentclass[UTF8,a4paper,10pt]{ctexart}
+
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.6cm,bottom=2.6cm}
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.4em}
+
+\newcommand{\placeholderfigure}[2]{
+\begin{figure}[H]
+    \centering
+    \fbox{
+        \begin{minipage}[c][#2][c]{0.85\textwidth}
+            \centering
+            \vspace{0.5em}
+            #1
+            \vspace{0.5em}
+        \end{minipage}
+    }
+    \caption{#1}
+\end{figure}
+}
+
+\newcommand{\insertfigure}[4]{
+\begin{figure}[H]
+    \centering
+    \IfFileExists{#1}{
+        \includegraphics[width=#2]{#1}
+    }{
+        \fbox{
+            \begin{minipage}[c][#4][c]{0.85\textwidth}
+                \centering #3
+            \end{minipage}
+        }
+    }
+    \caption{#3}
+\end{figure}
+}
+
+\title{
+\textbf{多模态大模型：算法、应用与微调 PJ1}\\
+\large 视觉-语言模型中不同跨模态对齐范式的比较研究
+}
+\author{
+{\small 姓名：\underline{\hspace{0.7cm}黄彬彬\hspace{0.7cm}} \quad 学号：\underline{\hspace{0.7cm}24210980091\hspace{0.7cm}}}
+}
+
+\date{{\small 提交日期：2026年5月10日}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+视觉-语言模型需要在图像与文本之间建立有效的跨模态对齐关系。不同模型采用的对齐范式存在明显差异，例如 CLIP / OpenCLIP 代表的 contrastive alignment、BLIP 代表的 matching-based alignment，以及 BLIP-2 中 Q-Former 所代表的 projection / query-based alignment。本文基于 COCO val2017 数据集及其 caption annotations，在统一数据与统一评测协议下，对三类模型在图文检索、图像描述生成以及表征空间结构方面进行了比较分析。实验包括 text-to-image retrieval、image-to-text retrieval、image captioning，以及 embedding visualization 和 nearest-neighbor case study。实验结果表明，matching-based 的 BLIP 在当前统一实现中取得了最强的检索表现；纯 contrastive 的 CLIP 具备稳定且高效的全局语义对齐能力；而 query-based 的 BLIP-2 在 captioning 中保持了较自然的语言生成能力，但在当前近似 embedding 提取协议下，其 retrieval 表现明显弱于前两者。进一步的最近邻与组合泛化案例显示，纯 contrastive learning 更容易依赖主物体和场景级语义，在属性词、关系词和数量词上仍存在明显瓶颈。
+\end{abstract}
+
+\textbf{关键词：} 视觉-语言模型；CLIP；BLIP；BLIP-2；图文检索；图像描述生成；跨模态对齐；组合泛化
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{引言}
+
+近年来，视觉-语言模型在图文检索、图像描述生成、视觉问答以及多模态推理等任务中取得了显著进展。此类模型的核心问题之一是如何将图像与文本两种异构模态映射到可以比较、交互或生成的统一表示空间中。不同模型在跨模态对齐方式上存在较大差异，这些差异会直接影响模型在检索、生成和表征学习中的行为。
+
+典型的跨模态对齐范式包括以下三类：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{Contrastive alignment}：以 CLIP / OpenCLIP 为代表，通过图像编码器和文本编码器分别提取特征，并在共享潜空间中最大化匹配图文对的相似度、最小化非匹配图文对的相似度。
+    \item \textbf{Matching-based alignment}：以 BLIP retrieval 为代表，除了全局相似度建模外，还可通过图文匹配模块进行更细粒度的跨模态交互。
+    \item \textbf{Projection / Query-based alignment}：以 BLIP-2 为代表，通过 Q-Former 使用一组 learnable query 从冻结视觉编码器中抽取与语言模型对接的视觉表示，从而在视觉编码器和语言模型之间建立桥接。
+\end{enumerate}
+
+本文希望回答的核心问题是：
+
+\begin{quote}
+为什么纯 contrastive learning 在组合泛化与细粒度对齐上可能存在瓶颈？
+\end{quote}
+
+为回答该问题，本文在 COCO val2017 数据集上对三类模型进行了统一实验，包括图文检索、图像描述生成和表征分析。通过定量指标与定性案例，本文分析不同对齐范式的优势、局限及其背后的可能原因。
+
+\section{相关模型与对齐范式}
+
+\subsection{Contrastive Alignment：CLIP / OpenCLIP}
+
+CLIP 类模型通常由一个图像编码器和一个文本编码器组成。给定一批图像 $\{I_i\}_{i=1}^{N}$ 和文本 $\{T_i\}_{i=1}^{N}$，模型分别得到图像表示 $\mathbf{v}_i$ 与文本表示 $\mathbf{t}_i$，并通过归一化后的点积或余弦相似度计算图文匹配分数：
+
+\begin{equation}
+s(I_i, T_j) = \frac{\mathbf{v}_i^\top \mathbf{t}_j}{\|\mathbf{v}_i\| \|\mathbf{t}_j\|}.
+\end{equation}
+
+训练时通常使用对比学习损失，使匹配的图文对相似度更高，不匹配的图文对相似度更低。其主要优势是结构简单、推理高效，并且适合大规模图文检索。然而，由于图像和文本在编码阶段缺少深层 token-level 交互，模型更容易学习到全局语义相似性，而不一定能准确捕捉细粒度属性、空间关系和组合结构。
+
+\subsection{Matching-based Alignment：BLIP}
+
+BLIP 同时面向视觉语言理解与生成任务。相比纯 contrastive 模型，BLIP 不仅可以学习图像和文本的全局 embedding，还可以通过图文匹配模块对图像 patch/token 与文本 token 进行更充分的交互。对于检索任务，BLIP 可先使用粗粒度相似度召回候选，再使用 image-text matching head 对候选进行重排序。
+
+这种方式的优势是能够在检索候选中进一步判断图文是否真正匹配，尤其是在语义相近但细节不同的 hard negative 样本中，matching-based 模型理论上更容易利用属性词、关系词和局部视觉线索进行区分。
+
+\subsection{Projection / Query-based Alignment：BLIP-2}
+
+BLIP-2 由冻结视觉编码器、Q-Former 和语言模型组成。Q-Former 通过一组 learnable query 从视觉编码器输出中提取与语言任务相关的视觉信息。该结构可以看作是视觉模态与语言模型之间的桥接层，使模型在无需重新训练大规模视觉编码器和语言模型的情况下，实现较强的图文理解和生成能力。
+
+与 CLIP 的双塔结构不同，BLIP-2 的 query-based 机制能够从视觉特征中抽取适合语言生成和跨模态对齐的压缩表征，因此在 captioning 等生成任务中通常具有较强表现。但其检索效果高度依赖于具体采用的特征提取协议。
+
+\section{数据集与实验设置}
+
+\subsection{数据集}
+
+本文使用 COCO val2017 数据集及其 caption annotations。COCO val2017 共包含 5000 张验证集图像，每张图像对应 5 条人工标注 caption，因此共有约 25000 条 caption。
+
+不过，考虑到本地环境为 CPU 推理环境，本文的统一实现并未在所有任务上使用完整 5000 张图像进行实验，而是根据任务复杂度采用不同规模的统一子集：
+
+\begin{itemize}
+    \item 检索任务：使用 500 张图像，每张图像取第 1 条 caption，共 500 对 image-text pairs；
+    \item captioning 任务：使用统一的 30 张图像子集；
+    \item 表征可视化：使用 500 对 image-text pairs；
+    \item nearest-neighbor 与组合泛化分析：使用 500 对 image-text pairs。
+\end{itemize}
+
+因此，本文结果适合用于三类对齐范式的相对比较，但不应直接与标准 COCO leaderboard 或完整验证集上的公开结果进行绝对对比。
+
+\subsection{实验模型}
+
+本文比较以下三类模型：
+
+\begin{table}[H]
+    \centering
+    \caption{实验模型设置}
+    \begin{tabular}{llll}
+        \toprule
+        类别 & 模型 & 对齐范式 & 主要用途 \\
+        \midrule
+        Contrastive & OpenCLIP ViT-L-14 & 双塔对比学习 & 图文检索、表征分析 \\
+        Matching-based & BLIP ITM Base COCO & 对比学习 + 图文匹配 & 图文检索、生成、表征分析 \\
+        Query-based & BLIP-2 OPT-2.7B & Q-Former 桥接视觉与语言 & 生成、近似检索、表征分析 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+具体模型版本如下：
+
+\begin{itemize}
+    \item OpenCLIP：\texttt{ViT-L-14}，checkpoint 为 \texttt{laion2b\_s32b\_b82k}
+    \item BLIP Retrieval：\texttt{Salesforce/blip-itm-base-coco}
+    \item BLIP Captioning：\texttt{Salesforce/blip-image-captioning-base}
+    \item BLIP-2：\texttt{Salesforce/blip2-opt-2.7b}
+\end{itemize}
+
+\subsection{统一评测协议}
+
+为保证比较公平，本文尽量采用统一的输入图像、caption annotations、预处理方式和评测指标。对于检索任务，统一提取图像表示和文本表示，并计算相似度矩阵。对于生成任务，统一输入同一批 COCO val2017 图像，并使用同一套 ground-truth captions 计算 captioning 指标。对于表征分析，统一采样相同的 image-text pair 子集进行降维可视化和 nearest-neighbor 分析。
+
+需要特别说明的是，当前 BLIP-2 检索并未采用原生 LAVIS retrieval 流程，而是根据本项目实现使用了近似 embedding 提取方式：图像特征由 Q-Former 输出经 \texttt{language\_projection} 后做均值池化，文本特征则由语言模型输入 embedding 做 masked mean pooling。因此，BLIP-2 的 retrieval 结果主要用于说明 query-based 表征在当前近似协议下的行为，不代表 BLIP-2 在原生 retrieval 接口上的最好水平。
+
+\section{任务一：图文检索实验}
+
+\subsection{任务定义}
+
+图文检索任务包括两个方向：
+
+\begin{enumerate}
+    \item \textbf{Text-to-Image Retrieval}：给定一条文本 caption，从候选图像库中检索对应图像。
+    \item \textbf{Image-to-Text Retrieval}：给定一张图像，从候选 caption 库中检索对应文本。
+\end{enumerate}
+
+在本实现中，由于采用每张图像的第一条 caption 作为统一文本代表，因此每个图像只对应一个 ground-truth 文本；这使得评测过程更简洁，但会略低估在标准 COCO 多参考 caption 设置下的 image-to-text 检索表现。
+
+Recall@$K$ 定义为：
+
+\begin{equation}
+\text{Recall@}K = \frac{1}{N} \sum_{i=1}^{N} \mathbb{I}[\text{rank}_i \le K],
+\end{equation}
+
+其中 $N$ 为查询样本数，$\text{rank}_i$ 表示正确匹配样本在排序列表中的名次。
+
+\subsection{实现方法}
+
+实验流程如下：
+
+\begin{enumerate}
+    \item 对 500 张 COCO 图像提取 image embedding；
+    \item 对对应的 500 条 caption 提取 text embedding；
+    \item 对 embedding 进行 L2 normalization；
+    \item 计算图像与文本之间的余弦相似度矩阵；
+    \item 分别进行 text-to-image 和 image-to-text 排序；
+    \item 统计 Recall@1、Recall@5 和 Recall@10。
+\end{enumerate}
+
+\subsection{检索结果}
+
+\begin{table}[H]
+    \centering
+    \caption{图文检索结果}
+    \begin{subtable}[t]{0.48\textwidth}
+        \centering
+        \caption{Text-to-Image Retrieval}
+        \small
+        \begin{tabular}{lccc}
+            \toprule
+            模型 & Recall@1 & Recall@5 & Recall@10 \\
+            \midrule
+            OpenCLIP & 0.706 & 0.932 & 0.976 \\
+            BLIP Retrieval & 0.854 & 0.982 & 0.994 \\
+            BLIP-2（近似） & 0.032 & 0.126 & 0.198 \\
+            \bottomrule
+        \end{tabular}
+    \end{subtable}
+    \hfill
+    \begin{subtable}[t]{0.48\textwidth}
+        \centering
+        \caption{Image-to-Text Retrieval}
+        \small
+        \begin{tabular}{lccc}
+            \toprule
+            模型 & Recall@1 & Recall@5 & Recall@10 \\
+            \midrule
+            OpenCLIP & 0.726 & 0.946 & 0.984 \\
+            BLIP Retrieval & 0.864 & 0.996 & 0.998 \\
+            BLIP-2（近似） & 0.030 & 0.072 & 0.120 \\
+            \bottomrule
+        \end{tabular}
+    \end{subtable}
+\end{table}
+
+\subsection{检索结果分析}
+
+从检索实验可以观察到三种不同趋势。
+
+第一，BLIP 在当前统一实现中取得了最强的检索结果，说明 matching-based 对齐在当前 500 对样本设置下具有更强的细粒度判别能力。其 Recall@1 已达到 0.864/0.854（I2T/T2I），明显优于 OpenCLIP。
+
+第二，OpenCLIP 也表现出稳定而强劲的检索能力，说明 contrastive learning 足以学到较强的全局图文对齐关系。在许多主物体和场景足够明确的样本上，CLIP 已能够准确完成匹配。
+
+第三，BLIP-2 在当前实验中的检索结果较弱，主要是因为统一评测时采用了近似池化和维度对齐方案，导致特征信息存在一定损失，因此这一结果更多反映当前实现方式的局限，而不代表 BLIP-2 本身的真实上限。
+
+总体而言，图文检索实验说明：contrastive learning 能够学习较强的全局图文对齐，matching-based 模型在当前实现下展现出更强的细粒度判别能力，而 BLIP-2 的结果则提示近似特征构造方式会明显影响 query-based 模型的检索表现。
+
+
+\section{任务二：图像描述生成实验}
+
+\subsection{任务定义}
+
+图像描述生成任务要求模型根据输入图像生成自然语言 caption，并与 COCO ground-truth captions 进行比较。根据项目要求，本任务比较 BLIP 与 BLIP-2 的 caption generation 能力，不要求 CLIP / OpenCLIP 生成 caption。
+
+\subsection{评价指标}
+
+本文稳定获得的指标包括：
+
+\begin{itemize}
+    \item \textbf{BLEU-4}：衡量生成文本与参考文本之间的 n-gram 精确匹配程度；
+    \item \textbf{CIDEr}：基于 TF-IDF 加权的 n-gram 相似度，更适合 COCO captioning 评价；
+    \item \textbf{ROUGE-L}：基于最长公共子序列衡量文本相似性。
+\end{itemize}
+
+\subsection{生成结果}
+
+\begin{table}[H]
+    \centering
+    \caption{Image Captioning 定量结果（30 张统一子集）}
+    \begin{tabular}{lccc}
+        \toprule
+        模型 & BLEU-4 & CIDEr& ROUGE-L\\
+        \midrule
+        BLIP & 0.2000 & 0.7435 & 0.4165 \\
+        BLIP-2 & 0.1865 & 0.7078 & 0.3860 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+从结果上看，BLIP 在当前 30 张统一子集上略优于 BLIP-2。虽然差距不大，但说明在该小规模子集和当前生成配置下，BLIP 的描述更贴近 COCO 参考 caption 风格。
+
+\subsection{定性案例}
+
+\insertfigure{../data/val2017/000000397133.jpg}{0.48\textwidth}{Captioning 案例 1：COCO image 397133}{5cm}
+
+\begin{table}[H]
+    \centering
+    \caption{Captioning 案例 1：厨房场景}
+    \begin{tabular}{p{3cm}p{11cm}}
+        \toprule
+        类型 & 文本 \\
+        \midrule
+        Ground Truth 1 & A man is in a kitchen making pizzas. \\
+        Ground Truth 2 & A baker is working in the kitchen rolling dough. \\
+        Ground Truth 3 & A person standing by a stove in a kitchen. \\
+        BLIP 输出 & a woman in a kitchen \\
+        BLIP-2 输出 & a woman in a kitchen with a man in a kitchen \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+该案例中，BLIP 只捕捉到了场景“kitchen”，但错误识别了主体性别；BLIP-2 至少补充出了图中存在的人物数量线索，但也带来了重复表达和性别误判。该例说明更强的语言生成能力并不等价于更忠实的视觉 grounding。
+
+\insertfigure{../data/val2017/000000087038.jpg}{0.48\textwidth}{Captioning 案例 2：COCO image 87038}{5cm}
+
+\begin{table}[H]
+    \centering
+    \caption{Captioning 案例 2：滑板场景}
+    \begin{tabular}{p{3cm}p{11cm}}
+        \toprule
+        类型 & 文本 \\
+        \midrule
+        Ground Truth 1 & A person on a skateboard and bike at a skate park. \\
+        Ground Truth 2 & A man on a skateboard performs a trick at the skate park. \\
+        Ground Truth 3 & A skateboarder jumps into the air as he performs a skateboard trick. \\
+        BLIP 输出 & a skate park \\
+        BLIP-2 输出 & a skateboarder doing a trick in a parking lot \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+该案例中，BLIP-2 明显优于 BLIP。BLIP 只给出了场景标签，几乎没有动作信息；BLIP-2 则成功捕捉到了“skateboarder”和“doing a trick”这两个关键语义，但将场景误描述为停车场而非滑板场。
+
+\subsection{生成能力分析}
+
+从 captioning 结果来看，BLIP 和 BLIP-2 都能够生成语法较自然、语义较完整的图像描述。但两者的偏差模式有所不同。
+
+BLIP 更接近 COCO 参考 caption 的简短风格，因此在 BLEU-4、CIDEr 和 ROUGE-L 上略有优势；BLIP-2 的输出通常更完整、更像自然语言句子，但也更容易加入额外细节或重复结构，从而在基于参考文本匹配的指标上略吃亏。
+
+这说明 captioning 指标并不能完全反映模型对图像细节的真实理解能力。一个生成结果即便语言更自然，也可能因为与 COCO 标注风格不完全一致而失分；反过来，一个短而保守的 caption 也可能在 n-gram 匹配上得到更高分数。因此，生成任务的比较需要结合定量指标和定性案例共同分析。
+
+\section{任务三：表征分析}
+
+\subsection{Embedding Visualization}
+
+\subsubsection{实验设置}
+
+为分析不同模型的表征空间结构，本文从 COCO val2017 中采样了 500 对 image-text pairs。每张图像选取第 1 条 caption。对于每个模型，分别提取图像表示和文本表示，并使用 PCA 与 t-SNE 进行二维降维可视化。由于正文篇幅限制，下面主要展示 PCA 结果，t-SNE 图已同时生成在输出目录中。
+
+具体设置如下：
+
+\begin{itemize}
+    \item 采样数量：500 对 image-text pairs
+    \item 文本选择方式：每张图像选择第 1 条 caption
+    \item 降维方法：PCA 与 t-SNE
+    \item 距离度量：余弦相似度
+\end{itemize}
+
+\subsubsection{可视化结果}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../output/visualizations/CLIP_pca_viz.png}
+        \caption{OpenCLIP}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../output/visualizations/BLIP_pca_viz.png}
+        \caption{BLIP}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../output/visualizations/BLIP2_pca_viz.png}
+        \caption{BLIP-2}
+    \end{subfigure}
+    \caption{三种模型的 PCA 可视化结果对比，其中蓝色点表示图像 embedding，红色点表示文本 embedding。}
+\end{figure}
+\subsubsection{可视化分析}
+
+表征统计结果如表~\ref{tab:repr} 所示。
+
+\begin{table}[H]
+    \centering
+    \caption{表征空间统计结果}
+    \label{tab:repr}
+    \begin{tabular}{lcccc}
+        \toprule
+        模型 & 平均配对相似度 & 随机配对相似度 & I2T top1 对齐率 & T2I top1 对齐率 \\
+        \midrule
+        OpenCLIP & 0.2980 & 0.0721 & 0.726 & 0.706 \\
+        BLIP & 0.4743 & 0.2197 & 0.864 & 0.854 \\
+        BLIP-2 & -0.0166 & -0.0240 & 0.030 & 0.032 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+从统计结果和可视化可以重点分析三个问题。
+
+第一，同一图文对在 embedding space 中是否更接近。BLIP 的平均配对相似度最高，说明其图文对在共享空间中对齐得最紧；OpenCLIP 次之；BLIP-2 在当前近似协议下甚至出现接近零甚至略负的平均配对相似度，说明图像侧和文本侧并未形成稳定共享空间。
+
+第二，不同模型的图像点与文本点是否更容易混合。OpenCLIP 与 BLIP 的图像点和文本点整体上有明显的相互靠近趋势，其中 BLIP 的跨模态混合程度更高；BLIP-2 则表现出更强的模态分离，这与其 retrieval 表现不佳相互印证。
+
+第三，语义簇结构是否不同。OpenCLIP 和 BLIP 都出现了较明显的“主物体簇”与“场景簇”趋势，例如 bike、toilet、kitchen、street 等语义会聚集到相近区域。但从后续案例可见，这种聚类更多依赖主物体和场景级语义，而不一定能进一步稳定地区分颜色、数量与关系。
+
+\subsection{Nearest-Neighbor Case Study}
+
+\subsubsection{给定图像检索文本}
+
+本部分给定一张图像，分别使用不同模型检索最相近的若干文本 caption，并分析检索结果是否真正匹配图像内容。
+
+\insertfigure{../data/val2017/000000174482.jpg}{0.42\textwidth}{Nearest-Neighbor 图像到文本案例 1：蓝色自行车}{5cm}
+
+\begin{table}[H]
+    \centering
+    \caption{给定图像检索文本：案例 1（image id 174482）}
+    \begin{tabular}{clp{9cm}}
+        \toprule
+        模型 & Rank & 检索到的文本 \\
+        \midrule
+        \multirow{3}{*}{OpenCLIP}
+        & 1 & a blue bike parked on a side walk \\
+        & 2 & A cat standing next to a bike parked against a wall. \\
+        & 3 & A man wearing a bike helmet standing next to a bicycle. \\
+        \midrule
+        \multirow{3}{*}{BLIP}
+        & 1 & a blue bike parked on a side walk \\
+        & 2 & A blue fire hydrant posed on a street corner in a city. \\
+        & 3 & A man wearing a bike helmet standing next to a bicycle. \\
+        \midrule
+        \multirow{3}{*}{BLIP-2}
+        & 1 & a blue bike parked on a side walk \\
+        & 2 & A cat standing next to a bike parked against a wall. \\
+        & 3 & a stop sign and a white and green street sign and a tree \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+该案例中，三种模型都能在 top-1 命中正确 caption，说明“主物体 + 基础场景”语义较强时，不同范式都能完成粗粒度对齐。但 OpenCLIP、BLIP 和 BLIP-2 在后续排名中都混入了共享局部语义的 hard negatives，例如 bike、blue、street sign 等，体现出模型更依赖主物体而非完整句义。
+
+\insertfigure{../data/val2017/000000006818.jpg}{0.42\textwidth}{Nearest-Neighbor 图像到文本案例 2：房间中的水桶}{5cm}
+
+\begin{table}[H]
+    \centering
+    \caption{给定图像检索文本：案例 2（image id 6818）}
+    \begin{tabular}{clp{9cm}}
+        \toprule
+        模型 & Rank & 检索到的文本 \\
+        \midrule
+        \multirow{3}{*}{OpenCLIP}
+        & 1 & A small closed toilet in a cramped space. \\
+        & 2 & A toilet sitting in a room surrounded by personal items. \\
+        & 3 & A red toilet in a very small bathroom. \\
+        \midrule
+        \multirow{3}{*}{BLIP}
+        & 1 & a couple of buckets in a white room \\
+        & 2 & A couple of windows sitting inside of a room. \\
+        & 3 & A bathroom that has a broken wall in the shower. \\
+        \midrule
+        \multirow{3}{*}{BLIP-2}
+        & 1 & A picture of a recently married couple displayed behind glass. \\
+        & 2 & a stop sign and a white and green street sign and a tree \\
+        & 3 & A cat standing next to a bike parked against a wall. \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+该案例具有较强区分度。BLIP 能正确检索到“水桶在白色房间中”的描述；OpenCLIP 则明显被 bathroom/toilet 语义吸引；BLIP-2 在当前近似空间中几乎完全失配。这说明 matching-based 表征在细节较弱但局部结构关键的样本上，更容易保持正确语义，而纯对比式和近似 query-based 检索更容易被高频场景先验牵引。
+
+\subsubsection{给定文本检索图像}
+
+\begin{table}[H]
+    \centering
+    \caption{给定文本检索图像：案例 1}
+    \begin{tabular}{p{3cm}p{11cm}}
+        \toprule
+        查询文本 & a blue bike parked on a side walk \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{案例 1 的 text-to-image top-3 结果}
+    \begin{tabular}{clp{8.5cm}}
+        \toprule
+        模型 & Rank & 检索到的图像（image id + 参考 caption） \\
+        \midrule
+        \multirow{3}{*}{OpenCLIP}
+        & 1 & 174482: a blue bike parked on a side walk \\
+        & 2 & 441586: MAN ON A CONTRAPTION, SURROUNDED BY A BICYCLE AND ANOTHER PERSON \\
+        & 3 & 203317: A red and white bicycle next to a building and door. \\
+        \midrule
+        \multirow{3}{*}{BLIP}
+        & 1 & 174482: a blue bike parked on a side walk \\
+        & 2 & 203317: A red and white bicycle next to a building and door. \\
+        & 3 & 338560: A blue fire hydrant posed on a street corner in a city. \\
+        \midrule
+        \multirow{3}{*}{BLIP-2}
+        & 1 & 226111: A No bicycles, skates or skateboards sign on a pole. \\
+        & 2 & 296649: People are walking and riding motorcycles on the street \\
+        & 3 & 367680: Cars, truck and carriages are traveling on the road \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+该查询中，OpenCLIP 和 BLIP 都正确命中目标图像，但后续排序中开始混入“bicycle”“blue”等局部相关样本。BLIP-2 则被 bicycle sign、motorcycle 和 road scene 吸引，说明当前近似空间更多保留了粗粒度交通语义，而缺少精确的文本-视觉绑定。
+
+\begin{table}[H]
+    \centering
+    \caption{给定文本检索图像：案例 2}
+    \begin{tabular}{p{3cm}p{11cm}}
+        \toprule
+        查询文本 & a couple of buckets in a white room \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{案例 2 的 text-to-image top-3 结果}
+    \begin{tabular}{clp{8.5cm}}
+        \toprule
+        模型 & Rank & 检索到的图像（image id + 参考 caption） \\
+        \midrule
+        \multirow{3}{*}{OpenCLIP}
+        & 1 & 95786: there are three vases made of clay on a table \\
+        & 2 & 6818: a couple of buckets in a white room \\
+        & 3 & 168458: there is a small glass vase that has purple flowers in it \\
+        \midrule
+        \multirow{3}{*}{BLIP}
+        & 1 & 6818: a couple of buckets in a white room \\
+        & 2 & 347693: A couple of windows sitting inside of a room. \\
+        & 3 & 397133: A man is in a kitchen making pizzas. \\
+        \midrule
+        \multirow{3}{*}{BLIP-2}
+        & 1 & 226111: A No bicycles, skates or skateboards sign on a pole. \\
+        & 2 & 403385: A bathroom that has a broken wall in the shower. \\
+        & 3 & 39956: A messy room with door and bed and chair. \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+这个查询再次表明，BLIP 对较弱但真实存在的视觉细节保持了更好的辨别力；OpenCLIP 则更容易被“couple of / room / container-like object”这类表面相似语义牵引；BLIP-2 的前几名结果甚至已经偏离 query 核心内容。
+
+\subsubsection{Nearest-Neighbor 现象分析}
+
+通过 nearest-neighbor case study，可以更直接观察模型在细粒度对齐方面的行为。
+
+首先，模型存在明显的主物体优先现象。例如 bike、toilet、motorcycle 这类高频主物体经常主导排序结果，即使 query 中还包含颜色、数量或局部场景限制，模型也会优先保留主物体级相似性。
+
+其次，关系词和动作词更容易被忽略。带有“behind”“riding”“next to”这类关系成分的语句，往往会被映射到同一主物体共现区域，而不是形成清晰的关系边界。
+
+第三，hard negatives 很容易被拉近。在 COCO 这类真实场景数据中，大量样本共享局部语义。例如 bathroom 和 toilet、bike 和 street、dog 和 outdoor field 等。纯 embedding similarity 往往只能保证“差不多相关”，却不一定保证“严格匹配”。
+
+\section{组合泛化案例分析}
+
+为进一步分析模型的细粒度理解能力，本文设计了若干组合泛化案例。组合泛化要求模型不仅识别单个概念，还要正确理解概念之间的组合关系，例如颜色与物体的绑定、数量差异以及空间或动作关系。
+
+\subsection{颜色属性：red bus vs blue bus}
+
+\begin{table}[H]
+    \centering
+    \caption{组合泛化案例：颜色属性}
+    \begin{tabular}{p{4cm}p{10cm}}
+        \toprule
+        查询文本 & 分析 \\
+        \midrule
+        red bus & CLIP 相似度为 0.7059，BLIP 为 0.7833，BLIP-2 为 0.7325。三者都能召回与 bus 相关的 caption，但颜色绑定并不稳定，尤其 CLIP 与 BLIP 都会混入与红色无关的 bus 样本。 \\
+        blue bus & 三种模型都倾向于检索到包含 ``bus'' 或 ``blue'' 局部词的样本，例如 blue bike、blue towel、bus on freeway，说明颜色与物体的联合建模明显弱于主物体建模。 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+在该案例中，如果模型检索结果主要包含 bus，但颜色不稳定，则说明模型对主物体的建模强于对属性词的绑定。当前实验结果与这一判断一致。
+
+\subsection{数量属性：two dogs vs one dog}
+
+\begin{table}[H]
+    \centering
+    \caption{组合泛化案例：数量属性}
+    \begin{tabular}{p{4cm}p{10cm}}
+        \toprule
+        查询文本 & 分析 \\
+        \midrule
+        two dogs & CLIP 相似度为 0.7223，BLIP 为 0.8236，BLIP-2 为 0.7079。三种模型都能召回 dog 相关样本，但 BLIP 更容易把 ``two dogs'' 的结果排在更前面。 \\
+        one dog & 三种模型依然优先聚焦 dog 概念本身；CLIP 与 BLIP 都会把单狗和双狗样本拉得很近，BLIP-2 甚至出现 hot dog、dog+cat 等语义近邻，说明数量词的建模明显不足。 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+数量词是视觉语言模型中较难稳定建模的细粒度语义。当前实验表明，哪怕在检索结果前几名中能出现正确样本，数量差异也很难成为主导排序的关键因子。
+
+\subsection{关系语义：man behind horse vs man riding horse}
+
+\begin{table}[H]
+    \centering
+    \caption{组合泛化案例：关系语义}
+    \begin{tabular}{p{4cm}p{10cm}}
+        \toprule
+        查询文本 & 分析 \\
+        \midrule
+        man behind horse & CLIP 相似度为 0.8322，BLIP 为 0.8887，BLIP-2 为 0.8131。三种模型都把 man 和 horse 的共现看得很重要，但 BLIP 和 CLIP 的近邻中仍混有与 riding 或普通 man/horse 场景相近的样本。 \\
+        man riding horse & 三种模型都更容易召回骑行、滑板、骑车、骑马等动作样本，而不是稳定地区分 riding 与 behind，说明关系语义虽然被部分捕捉，但仍会被更强的动作或主物体语义淹没。 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+关系词对跨模态对齐提出了更高要求。两个短语包含相同物体 man 和 horse，但空间关系或动作关系不同。如果模型仅学习物体共现，那么它可能无法稳定区分这两类样本。当前结果表明，即便 BLIP 有更强的跨模态交互，其关系建模也仍非完全可靠。
+
+\section{讨论：为什么纯 Contrastive Learning 存在瓶颈？}
+
+结合上述实验，可以从以下几个方面解释纯 contrastive learning 在组合泛化与细粒度对齐上的潜在瓶颈。
+
+\subsection{全局相似度目标可能弱化局部细节}
+
+CLIP 类模型通常将整张图像和整段文本压缩为单个全局 embedding，并通过图文对之间的相似度进行训练。这种目标非常适合学习图像与文本的整体语义对应，例如“狗在草地上”“人在滑雪”“街道上有公交车”等。然而，当不同样本共享相同主物体和相似场景时，全局 embedding 往往无法充分保留颜色、数量、空间关系等细粒度信息。
+
+\subsection{负样本构造不一定覆盖细粒度差异}
+
+对比学习依赖正负样本对。如果训练批次中的负样本大多在主语义上明显不同，那么模型只需要学习粗粒度语义就能完成区分，而不必精确理解属性绑定和关系结构。当前实验中的“red bus vs blue bus”“one dog vs two dogs”“man behind horse vs man riding horse”正体现了这一点：模型往往先抓住 bus、dog、man/horse 这些高频概念，而不是组合结构本身。
+
+\subsection{双塔结构缺少深层跨模态交互}
+
+CLIP 类模型在编码图像和文本时通常是相互独立的，直到最后才通过相似度进行比较。这种双塔结构使得检索效率很高，但也限制了图像 patch 与文本 token 之间的细粒度对齐。相比之下，BLIP 的图文匹配模块能够引入更强的跨模态交互，因此在当前实验中取得了最好的 retrieval 表现。
+
+\subsection{语言与视觉的组合结构难以由单向量完整表达}
+
+组合泛化要求模型理解属性、对象、动作和关系之间的结构化组合。例如，“red bus”不只是 red 和 bus 的简单相加，而是要求 red 绑定到 bus；“man behind horse”不仅要求识别 man 和 horse，还要求理解二者的空间关系。单个全局 embedding 很难完整表达这种组合结构，尤其是在一个向量同时承担检索、聚类和模态对齐时更是如此。
+
+\subsection{实验结果给出的直接证据}
+
+本文结果为上述判断提供了较直接的经验支持：
+
+\begin{itemize}
+    \item OpenCLIP 的 retrieval 表现已经很强，但仍系统性地把主物体相似、细节不匹配的 hard negatives 排到前列；
+    \item BLIP 在相同样本上显著提升了 top-1 检索表现，说明更强的跨模态交互确实有助于细粒度判别；
+    \item 组合泛化测试中，三类模型对颜色、数量和关系的区分都弱于对主物体的区分，这说明该问题并非单一模型失误，而是视觉语言对齐中的共性难点。
+\end{itemize}
+
+\section{结论}
+
+本文在 COCO val2017 数据集上比较了 contrastive alignment、matching-based alignment 和 projection / query-based alignment 三类视觉-语言对齐范式。通过图文检索、图像描述生成和表征空间分析，可以得到以下结论。
+
+首先，OpenCLIP 代表的 contrastive alignment 能够高效学习图像与文本之间的全局语义对应关系，因此在图文检索中具有很强的基础能力。其双塔结构允许提前计算图像和文本 embedding，推理效率高，适合大规模候选库检索。
+
+其次，BLIP 代表的 matching-based alignment 在当前统一实现中表现最好。无论是 Recall@K 还是最近邻案例，它都比 OpenCLIP 更能抵抗语义相近但细节不同的 hard negatives，说明 image-text matching 或更强的跨模态交互确实能帮助模型捕捉更多细粒度信息。
+
+第三，BLIP-2 代表的 query-based alignment 在 caption generation 中仍表现出不错的语言生成能力，但其 retrieval 能力对特征提取协议非常敏感。当前近似 embedding 提取方式下，BLIP-2 没有形成稳定共享空间，因此在检索与表征统计上显著落后于前两者。
+
+最后，纯 contrastive learning 在组合泛化与细粒度对齐上的瓶颈主要来自全局相似度目标、负样本粒度不足、双塔结构缺少深层跨模态交互，以及单一全局 embedding 难以表达复杂组合结构。未来可以通过构造更强 hard negatives、引入区域级或 token-level 对齐、结合 matching head 或使用原生 retrieval 接口等方式进一步改进。
+
+\section{附录：实验环境与代码说明}
+
+\subsection{代码结构}
+
+\begin{table}[H]
+    \centering
+    \caption{代码文件说明}
+    \begin{tabular}{ll}
+        \toprule
+        文件或目录 & 功能说明 \\
+        \midrule
+        \texttt{download\_coco.py} & 下载或整理 COCO val2017 数据 \\
+        \texttt{models.py} & 加载 OpenCLIP、BLIP、BLIP-2 并提供统一特征/生成接口 \\
+        \texttt{dataset.py} & 读取 COCO val2017 图像与 caption annotations \\
+        \texttt{evaluator.py} & 计算 retrieval 与 captioning 指标 \\
+        \texttt{task\_retrieval.py} & 运行图文检索实验 \\
+        \texttt{task\_captioning.py} & 运行 BLIP / BLIP-2 captioning 实验 \\
+        \texttt{task\_representation.py} & 执行 PCA/t-SNE 表征分析 \\
+        \texttt{task\_nearest\_neighbor.py} & 最近邻案例与组合泛化分析 \\
+        \texttt{output/} & 保存实验结果、缓存 embedding 与可视化图像 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{复现实验命令}
+
+\begin{verbatim}
+# 1. 运行图文检索
+python task_retrieval.py
+
+# 2. 运行图像描述生成
+python task_captioning.py
+
+# 3. 运行表征可视化
+python task_representation.py
+
+# 4. 运行最近邻与组合泛化分析
+python task_nearest_neighbor.py
+\end{verbatim}
+
+\end{document}

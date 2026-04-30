@@ -1,0 +1,3443 @@
+{
+  "CLIP": {
+    "num_samples": 500,
+    "image_to_text": [
+      {
+        "query_image_id": 397133,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000397133.jpg",
+        "ground_truth_caption": "A man is in a kitchen making pizzas.",
+        "nearest_captions": [
+          "A man is in a kitchen making pizzas.",
+          "A person is holding a spatula near slices of bread on a stove.",
+          "A woman observing something on a kitchen stove.",
+          "Kitchen utensils and appliances have been left unattended",
+          "The kitchen is lit with overhead lights, shining on the cupboard and sink"
+        ],
+        "distances": [
+          0.7481679147883213,
+          0.7488518435027118,
+          0.75812077141671,
+          0.768943491245519,
+          0.772608377805521
+        ]
+      },
+      {
+        "query_image_id": 37777,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000037777.jpg",
+        "ground_truth_caption": "The dining table near the kitchen has a bowl of fruit on it.",
+        "nearest_captions": [
+          "A kitchen with a counter and a table with chairs.",
+          "The dining table near the kitchen has a bowl of fruit on it.",
+          "A kitchen filled with metal appliances and a window.",
+          "A wooden table with two chairs next to a sink.",
+          "A white refrigerator freezer sitting inside of a kitchen."
+        ],
+        "distances": [
+          0.7373279883211481,
+          0.760600381455653,
+          0.7691793909885856,
+          0.7759980569332969,
+          0.7838413351609856
+        ]
+      },
+      {
+        "query_image_id": 252219,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000252219.jpg",
+        "ground_truth_caption": "a person with a shopping cart on a city street ",
+        "nearest_captions": [
+          "a person with a shopping cart on a city street ",
+          "A man prepares to cross the street at a crosswalk",
+          "A man standing next to train tracks with bags of luggage.",
+          "View of a public men's' room with a  cot on the side.",
+          "Two men being drug on buggies by dogs."
+        ],
+        "distances": [
+          0.717758025486294,
+          0.7658301142324279,
+          0.781024823236693,
+          0.7834547209116636,
+          0.7912936123340744
+        ]
+      },
+      {
+        "query_image_id": 87038,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000087038.jpg",
+        "ground_truth_caption": "A person on a skateboard and bike at a skate park.",
+        "nearest_captions": [
+          "A person on a skateboard and bike at a skate park.",
+          "Youngster on a skateboard, trying simple tip up stunt.",
+          "A person on a skateboard rides down a ramp.",
+          "A man flying through the air while riding a skateboard.",
+          "A BOY WITH A BLUE SHIRT AND JEAN PANTS DOING A TRICK WITH HIS SKATEBOARD"
+        ],
+        "distances": [
+          0.7174294407329334,
+          0.7376743323009831,
+          0.7467011583463301,
+          0.7535069547525165,
+          0.7682142074804322
+        ]
+      },
+      {
+        "query_image_id": 174482,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000174482.jpg",
+        "ground_truth_caption": "a blue bike parked on a side walk ",
+        "nearest_captions": [
+          "a blue bike parked on a side walk ",
+          "A cat standing next to a bike parked against a wall.",
+          "A man wearing a bike helmet standing next to a bicycle.",
+          "A cross road of Furnace St. and Crapo St. ",
+          "A red and white bicycle next to a building and door."
+        ],
+        "distances": [
+          0.6686514929764729,
+          0.7762035937239445,
+          0.7946163706909802,
+          0.801845330650073,
+          0.8060636799052712
+        ]
+      },
+      {
+        "query_image_id": 403385,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000403385.jpg",
+        "ground_truth_caption": "A bathroom that has a broken wall in the shower.",
+        "nearest_captions": [
+          "A small closed toilet in a cramped space.",
+          "View of a public men's' room with a  cot on the side.",
+          "A bathroom that has a broken wall in the shower.",
+          "A toilet sitting in a room surrounded by personal items.",
+          "A white toilet and cup in a room."
+        ],
+        "distances": [
+          0.6922938284076813,
+          0.7092109710580876,
+          0.7110644177465464,
+          0.7163066911673717,
+          0.7295144009657195
+        ]
+      },
+      {
+        "query_image_id": 6818,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000006818.jpg",
+        "ground_truth_caption": "a couple of buckets in a white room",
+        "nearest_captions": [
+          "A small closed toilet in a cramped space.",
+          "A toilet sitting in a room surrounded by personal items.",
+          "A red toilet in a very small bathroom.",
+          "A white toilet and cup in a room.",
+          "there is a cat that is drinking out of the toilet"
+        ],
+        "distances": [
+          0.7015676730943314,
+          0.7306800648417249,
+          0.7315745206749261,
+          0.7323154098662257,
+          0.7363724998238539
+        ]
+      },
+      {
+        "query_image_id": 480985,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000480985.jpg",
+        "ground_truth_caption": "The shiny motorcycle has been put on display.",
+        "nearest_captions": [
+          "The shiny motorcycle has been put on display.",
+          "People are walking and riding motorcycles on the street",
+          "A row of parked motorcycles sitting in front of a tall building.",
+          "A cat standing next to a bike parked against a wall.",
+          "a group of young men are riding their motocycles down the street"
+        ],
+        "distances": [
+          0.715172398150187,
+          0.8276713406078592,
+          0.8293230686083819,
+          0.8351967067142205,
+          0.8688329639726518
+        ]
+      },
+      {
+        "query_image_id": 458054,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000458054.jpg",
+        "ground_truth_caption": "A row of white toilets sitting on top of a dirt ground.",
+        "nearest_captions": [
+          "A row of white toilets sitting on top of a dirt ground.",
+          "Toilet with a black lid and rolls of toilet tissue in a bathroom",
+          "Two naked babies on training toilets in a bathroom",
+          "A black toilet in a tiled public bathroom stall.",
+          "A small closed toilet in a cramped space."
+        ],
+        "distances": [
+          0.6484629559194621,
+          0.7797928170354649,
+          0.8003074226195881,
+          0.8056744549958466,
+          0.8110840381080042
+        ]
+      },
+      {
+        "query_image_id": 331352,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000331352.jpg",
+        "ground_truth_caption": "A small closed toilet in a cramped space.",
+        "nearest_captions": [
+          "A toilet sitting in a room surrounded by personal items.",
+          "A small closed toilet in a cramped space.",
+          "a close up of a toilet and a bath tub with toys",
+          "A white toilet and cup in a room.",
+          "A red toilet in a very small bathroom."
+        ],
+        "distances": [
+          0.7153290710621625,
+          0.7360106600738149,
+          0.7410789235982107,
+          0.7452402456225551,
+          0.7666812768563207
+        ]
+      },
+      {
+        "query_image_id": 296649,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000296649.jpg",
+        "ground_truth_caption": "People are walking and riding motorcycles on the street",
+        "nearest_captions": [
+          "A train pulls up along some buildings. ",
+          "A street sign that reads Sparta sitting next to a tall building.",
+          "People are walking and riding motorcycles on the street",
+          "A large and wide street covered in lots of traffic lights.",
+          "a group of young men are riding their motocycles down the street"
+        ],
+        "distances": [
+          0.7985987473830936,
+          0.802390746734526,
+          0.8034457731698829,
+          0.8119064665680588,
+          0.8149710719790242
+        ]
+      },
+      {
+        "query_image_id": 386912,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000386912.jpg",
+        "ground_truth_caption": "a person sitting at a desk with a keyboard and monitor ",
+        "nearest_captions": [
+          "a person sitting at a desk with a keyboard and monitor ",
+          "a woman in a blue top with headphones and two cellphones",
+          "A woman is sitting in a chair with an umbrella.",
+          "A woman smiles from behind the book she has been reading.",
+          "Two people are at a computer desk with a mouse."
+        ],
+        "distances": [
+          0.7406435412058936,
+          0.7820539503125018,
+          0.8244581969651206,
+          0.8262862962559557,
+          0.8269513210946637
+        ]
+      },
+      {
+        "query_image_id": 502136,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000502136.jpg",
+        "ground_truth_caption": "A building wall and pair of doors that are open, along with vases of flowers on the outside of the building.",
+        "nearest_captions": [
+          "A building wall and pair of doors that are open, along with vases of flowers on the outside of the building.",
+          "Their is a hadron and their  in this lot,",
+          "A cross road of Furnace St. and Crapo St. ",
+          "View of a public men's' room with a  cot on the side.",
+          "A small closed toilet in a cramped space."
+        ],
+        "distances": [
+          0.7392953220619507,
+          0.8121310494993093,
+          0.822067645254964,
+          0.8334025954359146,
+          0.8417060898218861
+        ]
+      },
+      {
+        "query_image_id": 491497,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000491497.jpg",
+        "ground_truth_caption": "A fluffy white chair that faces away fro a television.",
+        "nearest_captions": [
+          "A fluffy white chair that faces away fro a television.",
+          "A room that has two televisions in it.",
+          "a dog laying on a bed with a tv in the background",
+          "A messy room with door and bed and chair.",
+          "A bed topped with three white pillows covered in a canopy."
+        ],
+        "distances": [
+          0.7052706504651012,
+          0.732124278943534,
+          0.7527066584720636,
+          0.7789722317224413,
+          0.7808444636086139
+        ]
+      },
+      {
+        "query_image_id": 184791,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000184791.jpg",
+        "ground_truth_caption": "A painting of a table with fruit on top of it.",
+        "nearest_captions": [
+          "A painting of a table with fruit on top of it.",
+          "The dining table near the kitchen has a bowl of fruit on it.",
+          "A bunch of mini bananas are hanging above a bowl of apples and oranges.",
+          "a table that has some bananas on it",
+          "there are three vases made of clay on a table"
+        ],
+        "distances": [
+          0.7086371597287727,
+          0.8073220703013597,
+          0.8141633839115211,
+          0.8294402142584835,
+          0.8321752339305221
+        ]
+      },
+      {
+        "query_image_id": 348881,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000348881.jpg",
+        "ground_truth_caption": "A large jetliner sitting on top of an airport runway.",
+        "nearest_captions": [
+          "some planes on an air port run way",
+          "A couple of pieces of very nice looking luggage.",
+          "a white and red plane parked on a tarmac",
+          "A few men working on moving luggage at an airport",
+          "A large jetliner sitting on top of an airport runway."
+        ],
+        "distances": [
+          0.704849971584375,
+          0.762556300665632,
+          0.7914250477324336,
+          0.7919319937897946,
+          0.7989303530773761
+        ]
+      },
+      {
+        "query_image_id": 289393,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000289393.jpg",
+        "ground_truth_caption": "Set of toy animals sitting in front of a red wooden wagon.",
+        "nearest_captions": [
+          "Set of toy animals sitting in front of a red wooden wagon.",
+          "there are two stuffed animals on a wooden bench",
+          "two cows outside one laying down and the other standing near a building ",
+          "A group of animals standing on top of a grass covered field.",
+          "Cattle lie in the grass to chew their cud."
+        ],
+        "distances": [
+          0.6880491698505731,
+          0.7470256572035683,
+          0.7784596051486057,
+          0.7957360474710671,
+          0.8024591049317079
+        ]
+      },
+      {
+        "query_image_id": 522713,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000522713.jpg",
+        "ground_truth_caption": " a bench sitting in the grass facing the water and boats ",
+        "nearest_captions": [
+          " a bench sitting in the grass facing the water and boats ",
+          "A beach with two boats and a tractor.",
+          "there are two stuffed animals on a wooden bench",
+          "A couple of people sitting on top of a wooden bench.",
+          "a boat is sitting next to a dock"
+        ],
+        "distances": [
+          0.7039443572812669,
+          0.8065591687465623,
+          0.8322304696861444,
+          0.837293338533909,
+          0.8434666421739491
+        ]
+      },
+      {
+        "query_image_id": 181666,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000181666.jpg",
+        "ground_truth_caption": "a flock of goats and some men watching them",
+        "nearest_captions": [
+          "a flock of goats and some men watching them",
+          "A woman standing next to a herd of animals.",
+          "A group of people kneeling down beside some sheep.",
+          "Outdoor show with sheep prominent on grass field.",
+          "A black goat with its mouth open next to a white goat. "
+        ],
+        "distances": [
+          0.683662384693175,
+          0.7423143192608159,
+          0.7857787397739894,
+          0.7880128812010875,
+          0.7913833888573563
+        ]
+      },
+      {
+        "query_image_id": 17627,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000017627.jpg",
+        "ground_truth_caption": "Several cars are parked in front of a building.",
+        "nearest_captions": [
+          "Several cars are parked in front of a building.",
+          "Two buses parked in a parking lot next to cars.",
+          "A bus traveling down a curvy road behind a black car.",
+          "Their is a hadron and their  in this lot,",
+          "A cross road of Furnace St. and Crapo St. "
+        ],
+        "distances": [
+          0.7384537550523605,
+          0.7833604557495912,
+          0.7953058078466563,
+          0.8060717908048081,
+          0.8078122641227843
+        ]
+      }
+    ],
+    "text_to_image": [
+      {
+        "query_caption": "A man is in a kitchen making pizzas.",
+        "ground_truth_image_id": 397133,
+        "nearest_images": [
+          {
+            "image_id": 397133,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000397133.jpg",
+            "reference_caption": "A man is in a kitchen making pizzas."
+          },
+          {
+            "image_id": 554735,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000554735.jpg",
+            "reference_caption": "A person grabbing a slice of pizza from a pizza box."
+          },
+          {
+            "image_id": 580294,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000580294.jpg",
+            "reference_caption": "Person cooking an eggs on a black pot on a stove. "
+          },
+          {
+            "image_id": 570471,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000570471.jpg",
+            "reference_caption": "Man cutting a cake on the table in the kitchen."
+          },
+          {
+            "image_id": 329219,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000329219.jpg",
+            "reference_caption": "A man standing next to a dog on the ground."
+          }
+        ],
+        "distances": [
+          0.7481679147883213,
+          0.7495884048630742,
+          0.7526610777962157,
+          0.7746549765329089,
+          0.7764119806369228
+        ]
+      },
+      {
+        "query_caption": "The dining table near the kitchen has a bowl of fruit on it.",
+        "ground_truth_image_id": 37777,
+        "nearest_images": [
+          {
+            "image_id": 186980,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000186980.jpg",
+            "reference_caption": "A wooden table with two chairs next to a sink."
+          },
+          {
+            "image_id": 37777,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000037777.jpg",
+            "reference_caption": "The dining table near the kitchen has a bowl of fruit on it."
+          },
+          {
+            "image_id": 340175,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000340175.jpg",
+            "reference_caption": "A LITTLE ROOM AND DINING ROOM AREA WITH FURNITURE"
+          },
+          {
+            "image_id": 509131,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000509131.jpg",
+            "reference_caption": "A bunch of mini bananas are hanging above a bowl of apples and oranges."
+          },
+          {
+            "image_id": 221708,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000221708.jpg",
+            "reference_caption": "Lights shine on a wooden dining room table."
+          }
+        ],
+        "distances": [
+          0.7284887908948038,
+          0.760600381455653,
+          0.7691655412992524,
+          0.7723864197886887,
+          0.7986309740850217
+        ]
+      },
+      {
+        "query_caption": "a person with a shopping cart on a city street ",
+        "ground_truth_image_id": 252219,
+        "nearest_images": [
+          {
+            "image_id": 252219,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000252219.jpg",
+            "reference_caption": "a person with a shopping cart on a city street "
+          },
+          {
+            "image_id": 356387,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000356387.jpg",
+            "reference_caption": "A row of parked motorcycles sitting in front of a tall building."
+          },
+          {
+            "image_id": 453708,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000453708.jpg",
+            "reference_caption": "A person carrying a crate on their shoulder that is full of bananas."
+          },
+          {
+            "image_id": 11197,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000011197.jpg",
+            "reference_caption": "A man prepares to cross the street at a crosswalk"
+          },
+          {
+            "image_id": 361103,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000361103.jpg",
+            "reference_caption": "A city sidewalk with people walking up and down "
+          }
+        ],
+        "distances": [
+          0.717758025486294,
+          0.786764527818641,
+          0.8034226403007386,
+          0.8052643802838215,
+          0.809409008369584
+        ]
+      },
+      {
+        "query_caption": "A person on a skateboard and bike at a skate park.",
+        "ground_truth_image_id": 87038,
+        "nearest_images": [
+          {
+            "image_id": 87038,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000087038.jpg",
+            "reference_caption": "A person on a skateboard and bike at a skate park."
+          },
+          {
+            "image_id": 448365,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000448365.jpg",
+            "reference_caption": "Youngster on a skateboard, trying simple tip up stunt."
+          },
+          {
+            "image_id": 35197,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000035197.jpg",
+            "reference_caption": "A person on a skateboard rides down a ramp."
+          },
+          {
+            "image_id": 476258,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000476258.jpg",
+            "reference_caption": "A person in a helmet is riding a skateboard."
+          },
+          {
+            "image_id": 349860,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000349860.jpg",
+            "reference_caption": "A BOY WITH A BLUE SHIRT AND JEAN PANTS DOING A TRICK WITH HIS SKATEBOARD"
+          }
+        ],
+        "distances": [
+          0.7174294407329334,
+          0.7344910865275645,
+          0.7345241426865083,
+          0.7375282641969233,
+          0.7404740845164537
+        ]
+      },
+      {
+        "query_caption": "a blue bike parked on a side walk ",
+        "ground_truth_image_id": 174482,
+        "nearest_images": [
+          {
+            "image_id": 174482,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000174482.jpg",
+            "reference_caption": "a blue bike parked on a side walk "
+          },
+          {
+            "image_id": 441586,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000441586.jpg",
+            "reference_caption": "MAN ON A CONTRAPTION, SURROUNDED BY A BICYCLE AND ANOTHER PERSON"
+          },
+          {
+            "image_id": 203317,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000203317.jpg",
+            "reference_caption": "A red and white bicycle next to a building and door."
+          },
+          {
+            "image_id": 338560,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000338560.jpg",
+            "reference_caption": "A blue fire hydrant posed on a street corner in a city."
+          },
+          {
+            "image_id": 101762,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000101762.jpg",
+            "reference_caption": "A cat standing next to a bike parked against a wall."
+          }
+        ],
+        "distances": [
+          0.6686514929764729,
+          0.7889789971542777,
+          0.7909418030802217,
+          0.7980743758103335,
+          0.8148450874184459
+        ]
+      },
+      {
+        "query_caption": "A bathroom that has a broken wall in the shower.",
+        "ground_truth_image_id": 403385,
+        "nearest_images": [
+          {
+            "image_id": 403385,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000403385.jpg",
+            "reference_caption": "A bathroom that has a broken wall in the shower."
+          },
+          {
+            "image_id": 547816,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000547816.jpg",
+            "reference_caption": "A view of a bathroom with the shower curtain open."
+          },
+          {
+            "image_id": 138819,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000138819.jpg",
+            "reference_caption": "The view of a bathroom with a wall mounted sink."
+          },
+          {
+            "image_id": 6818,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000006818.jpg",
+            "reference_caption": "a couple of buckets in a white room"
+          },
+          {
+            "image_id": 365387,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000365387.jpg",
+            "reference_caption": "View of a public men's' room with a  cot on the side."
+          }
+        ],
+        "distances": [
+          0.7110644177465464,
+          0.7717148668201054,
+          0.7728835136221609,
+          0.7783425973968036,
+          0.7808435454598592
+        ]
+      },
+      {
+        "query_caption": "a couple of buckets in a white room",
+        "ground_truth_image_id": 6818,
+        "nearest_images": [
+          {
+            "image_id": 95786,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000095786.jpg",
+            "reference_caption": "there are three vases made of clay on a table"
+          },
+          {
+            "image_id": 6818,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000006818.jpg",
+            "reference_caption": "a couple of buckets in a white room"
+          },
+          {
+            "image_id": 168458,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000168458.jpg",
+            "reference_caption": "there is a small glass vase that has purple flowers in it"
+          },
+          {
+            "image_id": 492878,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000492878.jpg",
+            "reference_caption": "A bathroom sink and its reflection in the mirror."
+          },
+          {
+            "image_id": 228144,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000228144.jpg",
+            "reference_caption": "A chair sitting in the middle of the room, in a black and white photo."
+          }
+        ],
+        "distances": [
+          0.7912772280559048,
+          0.7983338526192161,
+          0.8072799583162625,
+          0.8220006719895963,
+          0.8227713909095468
+        ]
+      },
+      {
+        "query_caption": "The shiny motorcycle has been put on display.",
+        "ground_truth_image_id": 480985,
+        "nearest_images": [
+          {
+            "image_id": 480985,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000480985.jpg",
+            "reference_caption": "The shiny motorcycle has been put on display."
+          },
+          {
+            "image_id": 458109,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000458109.jpg",
+            "reference_caption": "A train parked next to some train tracks."
+          },
+          {
+            "image_id": 441586,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000441586.jpg",
+            "reference_caption": "MAN ON A CONTRAPTION, SURROUNDED BY A BICYCLE AND ANOTHER PERSON"
+          },
+          {
+            "image_id": 448076,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000448076.jpg",
+            "reference_caption": "Girl trying out a game at a trade show."
+          },
+          {
+            "image_id": 338428,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000338428.jpg",
+            "reference_caption": "An older pickup truck with decorative murals painted on."
+          }
+        ],
+        "distances": [
+          0.715172398150187,
+          0.793860117530666,
+          0.8047824733046681,
+          0.8111459400266451,
+          0.8217025780866964
+        ]
+      },
+      {
+        "query_caption": "A row of white toilets sitting on top of a dirt ground.",
+        "ground_truth_image_id": 458054,
+        "nearest_images": [
+          {
+            "image_id": 458054,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000458054.jpg",
+            "reference_caption": "A row of white toilets sitting on top of a dirt ground."
+          },
+          {
+            "image_id": 6818,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000006818.jpg",
+            "reference_caption": "a couple of buckets in a white room"
+          },
+          {
+            "image_id": 365387,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000365387.jpg",
+            "reference_caption": "View of a public men's' room with a  cot on the side."
+          },
+          {
+            "image_id": 251065,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000251065.jpg",
+            "reference_caption": "A black toilet in a tiled public bathroom stall."
+          },
+          {
+            "image_id": 331352,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000331352.jpg",
+            "reference_caption": "A small closed toilet in a cramped space."
+          }
+        ],
+        "distances": [
+          0.6484629559194621,
+          0.7782310932767748,
+          0.7890065466212896,
+          0.7915869159907957,
+          0.797005541708937
+        ]
+      },
+      {
+        "query_caption": "A small closed toilet in a cramped space.",
+        "ground_truth_image_id": 331352,
+        "nearest_images": [
+          {
+            "image_id": 397327,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000397327.jpg",
+            "reference_caption": "A white bathroom is shown with a blue towel."
+          },
+          {
+            "image_id": 403385,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000403385.jpg",
+            "reference_caption": "A bathroom that has a broken wall in the shower."
+          },
+          {
+            "image_id": 6818,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000006818.jpg",
+            "reference_caption": "a couple of buckets in a white room"
+          },
+          {
+            "image_id": 251065,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000251065.jpg",
+            "reference_caption": "A black toilet in a tiled public bathroom stall."
+          },
+          {
+            "image_id": 564127,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000564127.jpg",
+            "reference_caption": "Toilet with a black lid and rolls of toilet tissue in a bathroom"
+          }
+        ],
+        "distances": [
+          0.6866575195470054,
+          0.6922938284076813,
+          0.7015676730943314,
+          0.7057930253219424,
+          0.7059925476812521
+        ]
+      },
+      {
+        "query_caption": "People are walking and riding motorcycles on the street",
+        "ground_truth_image_id": 296649,
+        "nearest_images": [
+          {
+            "image_id": 534827,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000534827.jpg",
+            "reference_caption": "a group of young men are riding their motocycles down the street"
+          },
+          {
+            "image_id": 38829,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000038829.jpg",
+            "reference_caption": "A man riding a bicycle with a boy on the back of it."
+          },
+          {
+            "image_id": 463730,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000463730.jpg",
+            "reference_caption": "Two buses parked in a parking lot next to cars."
+          },
+          {
+            "image_id": 356387,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000356387.jpg",
+            "reference_caption": "A row of parked motorcycles sitting in front of a tall building."
+          },
+          {
+            "image_id": 303818,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000303818.jpg",
+            "reference_caption": "A bus traveling down a curvy road behind a black car."
+          }
+        ],
+        "distances": [
+          0.7265770643814715,
+          0.7436832927268034,
+          0.7804135909992325,
+          0.7809717875545454,
+          0.7813073983512817
+        ]
+      },
+      {
+        "query_caption": "a person sitting at a desk with a keyboard and monitor ",
+        "ground_truth_image_id": 386912,
+        "nearest_images": [
+          {
+            "image_id": 108026,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000108026.jpg",
+            "reference_caption": "A man holds a controller and keyboard with his hands"
+          },
+          {
+            "image_id": 386912,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000386912.jpg",
+            "reference_caption": "a person sitting at a desk with a keyboard and monitor "
+          },
+          {
+            "image_id": 524456,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000524456.jpg",
+            "reference_caption": "Two people are at a computer desk with a mouse."
+          },
+          {
+            "image_id": 363840,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000363840.jpg",
+            "reference_caption": "Several different pieces of electronic equipment and computers on a desk."
+          },
+          {
+            "image_id": 63740,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000063740.jpg",
+            "reference_caption": "Two computers sitting on top of a desk."
+          }
+        ],
+        "distances": [
+          0.7164294905012065,
+          0.7406435412058936,
+          0.7430325250565,
+          0.7505510790651638,
+          0.7515410562727911
+        ]
+      },
+      {
+        "query_caption": "A building wall and pair of doors that are open, along with vases of flowers on the outside of the building.",
+        "ground_truth_image_id": 502136,
+        "nearest_images": [
+          {
+            "image_id": 502136,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000502136.jpg",
+            "reference_caption": "A building wall and pair of doors that are open, along with vases of flowers on the outside of the building."
+          },
+          {
+            "image_id": 168458,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000168458.jpg",
+            "reference_caption": "there is a small glass vase that has purple flowers in it"
+          },
+          {
+            "image_id": 189310,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000189310.jpg",
+            "reference_caption": "A living area with a red couch, mirror, window and painting."
+          },
+          {
+            "image_id": 31050,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000031050.jpg",
+            "reference_caption": "A vase with various flowers in it on a display case."
+          },
+          {
+            "image_id": 213224,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000213224.jpg",
+            "reference_caption": "A vase filled with flowers next to a smaller vase filled with even more flowers."
+          }
+        ],
+        "distances": [
+          0.7392953220619507,
+          0.8114285122598606,
+          0.8127483589768802,
+          0.8153737889473495,
+          0.825696634157263
+        ]
+      },
+      {
+        "query_caption": "A fluffy white chair that faces away fro a television.",
+        "ground_truth_image_id": 491497,
+        "nearest_images": [
+          {
+            "image_id": 491497,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000491497.jpg",
+            "reference_caption": "A fluffy white chair that faces away fro a television."
+          },
+          {
+            "image_id": 228144,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000228144.jpg",
+            "reference_caption": "A chair sitting in the middle of the room, in a black and white photo."
+          },
+          {
+            "image_id": 4495,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000004495.jpg",
+            "reference_caption": "A living room with a couch and chair."
+          },
+          {
+            "image_id": 189310,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000189310.jpg",
+            "reference_caption": "A living area with a red couch, mirror, window and painting."
+          },
+          {
+            "image_id": 366141,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000366141.jpg",
+            "reference_caption": "a cat laying on top of a chair in the living room "
+          }
+        ],
+        "distances": [
+          0.7052706504651012,
+          0.7607094679191956,
+          0.798001427033322,
+          0.8069569278357723,
+          0.8070571461075584
+        ]
+      },
+      {
+        "query_caption": "A painting of a table with fruit on top of it.",
+        "ground_truth_image_id": 184791,
+        "nearest_images": [
+          {
+            "image_id": 184791,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000184791.jpg",
+            "reference_caption": "A painting of a table with fruit on top of it."
+          },
+          {
+            "image_id": 509131,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000509131.jpg",
+            "reference_caption": "A bunch of mini bananas are hanging above a bowl of apples and oranges."
+          },
+          {
+            "image_id": 331817,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000331817.jpg",
+            "reference_caption": "A persons arm reaching over a table filled with food."
+          },
+          {
+            "image_id": 261116,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000261116.jpg",
+            "reference_caption": "A table filled with a cake and paper plates with ice cream and cake."
+          },
+          {
+            "image_id": 186980,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000186980.jpg",
+            "reference_caption": "A wooden table with two chairs next to a sink."
+          }
+        ],
+        "distances": [
+          0.7086371597287727,
+          0.7712244635923549,
+          0.8099403384388253,
+          0.8226698474662287,
+          0.8358814827103215
+        ]
+      },
+      {
+        "query_caption": "A large jetliner sitting on top of an airport runway.",
+        "ground_truth_image_id": 348881,
+        "nearest_images": [
+          {
+            "image_id": 384350,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000384350.jpg",
+            "reference_caption": "a white and red plane parked on a tarmac"
+          },
+          {
+            "image_id": 99054,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000099054.jpg",
+            "reference_caption": "some planes on an air port run way"
+          },
+          {
+            "image_id": 442480,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000442480.jpg",
+            "reference_caption": "A turboprop airplane that is in the hangar for repair. "
+          },
+          {
+            "image_id": 379453,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000379453.jpg",
+            "reference_caption": "An Air Force jet flying in a deep blue sky."
+          },
+          {
+            "image_id": 383621,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000383621.jpg",
+            "reference_caption": "Commercial airliner flying  near mast on cloudy day."
+          }
+        ],
+        "distances": [
+          0.7170391223903315,
+          0.7539354713837987,
+          0.7702621797982148,
+          0.7860143674268746,
+          0.7885830602648456
+        ]
+      },
+      {
+        "query_caption": "Set of toy animals sitting in front of a red wooden wagon.",
+        "ground_truth_image_id": 289393,
+        "nearest_images": [
+          {
+            "image_id": 289393,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000289393.jpg",
+            "reference_caption": "Set of toy animals sitting in front of a red wooden wagon."
+          },
+          {
+            "image_id": 82180,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000082180.jpg",
+            "reference_caption": "A teddy bear and a stuffed raccoon sitting on a faded wooden outdoor chair."
+          },
+          {
+            "image_id": 219283,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000219283.jpg",
+            "reference_caption": "A teddy bear sitting in front of a pile of boxes."
+          },
+          {
+            "image_id": 125062,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000125062.jpg",
+            "reference_caption": "A row of white teddy bears on shelf next to DVDs."
+          },
+          {
+            "image_id": 322844,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000322844.jpg",
+            "reference_caption": "there are two stuffed animals on a wooden bench"
+          }
+        ],
+        "distances": [
+          0.6880491698505731,
+          0.7494818549636391,
+          0.8097850105446638,
+          0.8170808074569664,
+          0.8251311417240605
+        ]
+      },
+      {
+        "query_caption": " a bench sitting in the grass facing the water and boats ",
+        "ground_truth_image_id": 522713,
+        "nearest_images": [
+          {
+            "image_id": 522713,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000522713.jpg",
+            "reference_caption": " a bench sitting in the grass facing the water and boats "
+          },
+          {
+            "image_id": 537153,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000537153.jpg",
+            "reference_caption": "A couple of people sitting on top of a wooden bench."
+          },
+          {
+            "image_id": 148730,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000148730.jpg",
+            "reference_caption": "a boat is sitting next to a dock"
+          },
+          {
+            "image_id": 186873,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000186873.jpg",
+            "reference_caption": "Large canoe with many people on lake with trees lining shore."
+          },
+          {
+            "image_id": 460160,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000460160.jpg",
+            "reference_caption": "a white bird some sand water rocks and grass"
+          }
+        ],
+        "distances": [
+          0.7039443572812669,
+          0.7496757887635781,
+          0.8009374860999656,
+          0.8125324809732495,
+          0.8268768493523209
+        ]
+      },
+      {
+        "query_caption": "a flock of goats and some men watching them",
+        "ground_truth_image_id": 181666,
+        "nearest_images": [
+          {
+            "image_id": 181666,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000181666.jpg",
+            "reference_caption": "a flock of goats and some men watching them"
+          },
+          {
+            "image_id": 158548,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000158548.jpg",
+            "reference_caption": "Outdoor show with sheep prominent on grass field."
+          },
+          {
+            "image_id": 295231,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000295231.jpg",
+            "reference_caption": "A group of animals standing on top of a grass covered field."
+          },
+          {
+            "image_id": 461405,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000461405.jpg",
+            "reference_caption": "A group of sheep in a grassy area with trees in the back ground."
+          },
+          {
+            "image_id": 16010,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000016010.jpg",
+            "reference_caption": "An outdoor area with many animals inluding a zebra and a rhinoceros.  "
+          }
+        ],
+        "distances": [
+          0.683662384693175,
+          0.7405387313333537,
+          0.7427301023750615,
+          0.7501268714109809,
+          0.7718795750585512
+        ]
+      },
+      {
+        "query_caption": "Several cars are parked in front of a building.",
+        "ground_truth_image_id": 17627,
+        "nearest_images": [
+          {
+            "image_id": 17627,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000017627.jpg",
+            "reference_caption": "Several cars are parked in front of a building."
+          },
+          {
+            "image_id": 367680,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000367680.jpg",
+            "reference_caption": "Cars, truck and carriages are traveling on the road"
+          },
+          {
+            "image_id": 97679,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000097679.jpg",
+            "reference_caption": "A car with a snowboard on it's ski rack parked in a foggy parking lot next to two cars with empty ski racks. "
+          },
+          {
+            "image_id": 356387,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000356387.jpg",
+            "reference_caption": "A row of parked motorcycles sitting in front of a tall building."
+          },
+          {
+            "image_id": 463730,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000463730.jpg",
+            "reference_caption": "Two buses parked in a parking lot next to cars."
+          }
+        ],
+        "distances": [
+          0.7384537550523605,
+          0.7537446088510427,
+          0.7927993637462767,
+          0.8129081207349931,
+          0.8224338984171877
+        ]
+      }
+    ]
+  },
+  "BLIP": {
+    "num_samples": 500,
+    "image_to_text": [
+      {
+        "query_image_id": 397133,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000397133.jpg",
+        "ground_truth_caption": "A man is in a kitchen making pizzas.",
+        "nearest_captions": [
+          "A man is in a kitchen making pizzas.",
+          "A woman observing something on a kitchen stove.",
+          "a couple of buckets in a white room",
+          "Man cutting a cake on the table in the kitchen.",
+          "Person cooking an eggs on a black pot on a stove. "
+        ],
+        "distances": [
+          0.6061325168151743,
+          0.6308107667929934,
+          0.6533956522133815,
+          0.6613703736316798,
+          0.662089211785954
+        ]
+      },
+      {
+        "query_image_id": 37777,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000037777.jpg",
+        "ground_truth_caption": "The dining table near the kitchen has a bowl of fruit on it.",
+        "nearest_captions": [
+          "The dining table near the kitchen has a bowl of fruit on it.",
+          "A white refrigerator freezer sitting inside of a kitchen.",
+          "A kitchen with a counter and a table with chairs.",
+          "A LITTLE ROOM AND DINING ROOM AREA WITH FURNITURE",
+          "a table that has some bananas on it"
+        ],
+        "distances": [
+          0.5023727556819847,
+          0.6103992284597402,
+          0.6136364825696656,
+          0.6196977710006066,
+          0.6458898220186361
+        ]
+      },
+      {
+        "query_image_id": 252219,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000252219.jpg",
+        "ground_truth_caption": "a person with a shopping cart on a city street ",
+        "nearest_captions": [
+          "a person with a shopping cart on a city street ",
+          "A city sidewalk with people walking up and down ",
+          "A group of people standing outside of a bus.",
+          "A group of people who are standing together.",
+          "A man prepares to cross the street at a crosswalk"
+        ],
+        "distances": [
+          0.5672675391800106,
+          0.5685299182328207,
+          0.6405204653536563,
+          0.6516455598963199,
+          0.6542868979902456
+        ]
+      },
+      {
+        "query_image_id": 87038,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000087038.jpg",
+        "ground_truth_caption": "A person on a skateboard and bike at a skate park.",
+        "nearest_captions": [
+          "A person on a skateboard and bike at a skate park.",
+          "A man flying through the air while riding a skateboard.",
+          "Youngster on a skateboard, trying simple tip up stunt.",
+          "MAN ON A CONTRAPTION, SURROUNDED BY A BICYCLE AND ANOTHER PERSON",
+          "A person on a skateboard rides down a ramp."
+        ],
+        "distances": [
+          0.5129841321351398,
+          0.5902734858283285,
+          0.5903269549794348,
+          0.6003404568681934,
+          0.6077231323958376
+        ]
+      },
+      {
+        "query_image_id": 174482,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000174482.jpg",
+        "ground_truth_caption": "a blue bike parked on a side walk ",
+        "nearest_captions": [
+          "a blue bike parked on a side walk ",
+          "A blue fire hydrant posed on a street corner in a city.",
+          "A man wearing a bike helmet standing next to a bicycle.",
+          "A cat standing next to a bike parked against a wall.",
+          "A city sidewalk with people walking up and down "
+        ],
+        "distances": [
+          0.4909176424892998,
+          0.5931140116470195,
+          0.6530936270924047,
+          0.6690266728280168,
+          0.6801331281993985
+        ]
+      },
+      {
+        "query_image_id": 403385,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000403385.jpg",
+        "ground_truth_caption": "A bathroom that has a broken wall in the shower.",
+        "nearest_captions": [
+          "A view of a bathroom with the shower curtain open.",
+          "A bathroom that has a broken wall in the shower.",
+          "A small closed toilet in a cramped space.",
+          "A small bathroom has a sink and a storage rack over the toilet.",
+          "A toilet sitting in a room surrounded by personal items."
+        ],
+        "distances": [
+          0.5718931431667669,
+          0.5771736217796102,
+          0.6061590660973319,
+          0.6228457280147137,
+          0.6286372627300498
+        ]
+      },
+      {
+        "query_image_id": 6818,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000006818.jpg",
+        "ground_truth_caption": "a couple of buckets in a white room",
+        "nearest_captions": [
+          "a couple of buckets in a white room",
+          "A couple of windows sitting inside of a room.",
+          "A bathroom that has a broken wall in the shower.",
+          "Colorful lights reflect off the items inside this bathroom stall",
+          "a bathroom with a mirror and a sink"
+        ],
+        "distances": [
+          0.5008006061740847,
+          0.6169375047125831,
+          0.6225589554514037,
+          0.6362617351504138,
+          0.6432790343706267
+        ]
+      },
+      {
+        "query_image_id": 480985,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000480985.jpg",
+        "ground_truth_caption": "The shiny motorcycle has been put on display.",
+        "nearest_captions": [
+          "The shiny motorcycle has been put on display.",
+          "A group of people looking at some kind of show or exhibit ",
+          "A group of people gathered in the lobby of  a building.",
+          "A plate of cooked food in seen in this image.",
+          "the people are all in a restaurant some are sitting "
+        ],
+        "distances": [
+          0.5453189871958753,
+          0.6802492469643435,
+          0.6807144856115441,
+          0.6861608545210367,
+          0.70572726892206
+        ]
+      },
+      {
+        "query_image_id": 458054,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000458054.jpg",
+        "ground_truth_caption": "A row of white toilets sitting on top of a dirt ground.",
+        "nearest_captions": [
+          "A row of white toilets sitting on top of a dirt ground.",
+          "Large assortment of small and large vases displayed outdoors.",
+          "A row of surfboards sticking out of the sand sitting next to each other.",
+          "Their is a hadron and their  in this lot,",
+          "A herd of elephants standing on top of a field."
+        ],
+        "distances": [
+          0.4610376872598039,
+          0.6374545134800264,
+          0.6390676870395591,
+          0.6620699284549357,
+          0.6646463895455152
+        ]
+      },
+      {
+        "query_image_id": 331352,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000331352.jpg",
+        "ground_truth_caption": "A small closed toilet in a cramped space.",
+        "nearest_captions": [
+          "A small closed toilet in a cramped space.",
+          "A toilet sitting in a room surrounded by personal items.",
+          "A white toilet and cup in a room.",
+          "there is a cat that is drinking out of the toilet",
+          "A red toilet in a very small bathroom."
+        ],
+        "distances": [
+          0.5116031367857405,
+          0.5603347817781231,
+          0.5698135595927394,
+          0.6259452495965518,
+          0.6285626852359963
+        ]
+      },
+      {
+        "query_image_id": 296649,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000296649.jpg",
+        "ground_truth_caption": "People are walking and riding motorcycles on the street",
+        "nearest_captions": [
+          "a group of young men are riding their motocycles down the street",
+          "People are walking and riding motorcycles on the street",
+          "A row of parked motorcycles sitting in front of a tall building.",
+          "Several cars are parked in front of a building.",
+          "A baseball game showing a batter waiting for a pitch."
+        ],
+        "distances": [
+          0.5479395079553118,
+          0.5607462486932905,
+          0.5665654360470584,
+          0.6259617387852595,
+          0.663068437314053
+        ]
+      },
+      {
+        "query_image_id": 386912,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000386912.jpg",
+        "ground_truth_caption": "a person sitting at a desk with a keyboard and monitor ",
+        "nearest_captions": [
+          "a person sitting at a desk with a keyboard and monitor ",
+          "A woman smiles from behind the book she has been reading.",
+          "Two people are at a computer desk with a mouse.",
+          "a woman poses in front of a giant pizza",
+          "A woman riding skis down a snow covered slope."
+        ],
+        "distances": [
+          0.5605638191054592,
+          0.6648262485963237,
+          0.6890478339003312,
+          0.7186277180383507,
+          0.7245430980217791
+        ]
+      },
+      {
+        "query_image_id": 502136,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000502136.jpg",
+        "ground_truth_caption": "A building wall and pair of doors that are open, along with vases of flowers on the outside of the building.",
+        "nearest_captions": [
+          "A building wall and pair of doors that are open, along with vases of flowers on the outside of the building.",
+          "a wall with a bunch of graffiti on it",
+          "A couple of windows sitting inside of a room.",
+          "A vase filled with flowers next to a smaller vase filled with even more flowers.",
+          "A vase filled with yellow and white flowers."
+        ],
+        "distances": [
+          0.4723817760439648,
+          0.6035078716191231,
+          0.6486833644374705,
+          0.6537170641719234,
+          0.6639185077875949
+        ]
+      },
+      {
+        "query_image_id": 491497,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000491497.jpg",
+        "ground_truth_caption": "A fluffy white chair that faces away fro a television.",
+        "nearest_captions": [
+          "A fluffy white chair that faces away fro a television.",
+          "A room that has two televisions in it.",
+          "A LITTLE ROOM AND DINING ROOM AREA WITH FURNITURE",
+          "A very nice living room that is very clean.",
+          "A living room with a couch and chair."
+        ],
+        "distances": [
+          0.5427898915734192,
+          0.6229553851387079,
+          0.6286843361476814,
+          0.6371875526983055,
+          0.6391795276963728
+        ]
+      },
+      {
+        "query_image_id": 184791,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000184791.jpg",
+        "ground_truth_caption": "A painting of a table with fruit on top of it.",
+        "nearest_captions": [
+          "A painting of a table with fruit on top of it.",
+          "A clock is shown with gold detailing around it.",
+          "a table that has some bananas on it",
+          "The dining table near the kitchen has a bowl of fruit on it.",
+          "Kitchen utensils and appliances have been left unattended"
+        ],
+        "distances": [
+          0.5544446225837553,
+          0.7194139063642953,
+          0.7202266351788178,
+          0.7252624108545231,
+          0.7312333797491016
+        ]
+      },
+      {
+        "query_image_id": 348881,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000348881.jpg",
+        "ground_truth_caption": "A large jetliner sitting on top of an airport runway.",
+        "nearest_captions": [
+          "A large jetliner sitting on top of an airport runway.",
+          "some planes on an air port run way",
+          "a white and red plane parked on a tarmac",
+          "A turboprop airplane that is in the hangar for repair. ",
+          "A city sidewalk with people walking up and down "
+        ],
+        "distances": [
+          0.5130496043531837,
+          0.5257619278405425,
+          0.5486861249428425,
+          0.6222751747115861,
+          0.6296318608214975
+        ]
+      },
+      {
+        "query_image_id": 289393,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000289393.jpg",
+        "ground_truth_caption": "Set of toy animals sitting in front of a red wooden wagon.",
+        "nearest_captions": [
+          "Set of toy animals sitting in front of a red wooden wagon.",
+          "A group of animals standing on top of a grass covered field.",
+          "A couple of large elephants standing next to a baby elephant.",
+          "there are three vases made of clay on a table",
+          "A replica of a bear and her cub in a glass case in an exhibit."
+        ],
+        "distances": [
+          0.5174704592663718,
+          0.6623384903372806,
+          0.6691787608423982,
+          0.6946560058962075,
+          0.7013840829656253
+        ]
+      },
+      {
+        "query_image_id": 522713,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000522713.jpg",
+        "ground_truth_caption": " a bench sitting in the grass facing the water and boats ",
+        "nearest_captions": [
+          " a bench sitting in the grass facing the water and boats ",
+          "a boat is sitting next to a dock",
+          "A very green hillside in the day time.",
+          "A zebra standing on top of a grass covered field.",
+          "A view from the inside of a train from a side window."
+        ],
+        "distances": [
+          0.491919755792239,
+          0.6436197140387228,
+          0.6450117257535787,
+          0.6708038539823866,
+          0.6735170877572475
+        ]
+      },
+      {
+        "query_image_id": 181666,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000181666.jpg",
+        "ground_truth_caption": "a flock of goats and some men watching them",
+        "nearest_captions": [
+          "a flock of goats and some men watching them",
+          "A woman standing next to a herd of animals.",
+          "A stable full of lambs standing and laying around.",
+          "A group of people kneeling down beside some sheep.",
+          "A herd of animals grazing on a dry grass field."
+        ],
+        "distances": [
+          0.47921169628018856,
+          0.5550646088559466,
+          0.6128105987070008,
+          0.6228495884001023,
+          0.6406189145556158
+        ]
+      },
+      {
+        "query_image_id": 17627,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000017627.jpg",
+        "ground_truth_caption": "Several cars are parked in front of a building.",
+        "nearest_captions": [
+          "Several cars are parked in front of a building.",
+          "Two buses parked in a parking lot next to cars.",
+          "Cars, truck and carriages are traveling on the road",
+          "A bus traveling on a freeway next to other traffic.",
+          "Their is a hadron and their  in this lot,"
+        ],
+        "distances": [
+          0.5537837398238219,
+          0.6447279428510417,
+          0.6701826697198301,
+          0.6772674114485834,
+          0.6799683120999431
+        ]
+      }
+    ],
+    "text_to_image": [
+      {
+        "query_caption": "A man is in a kitchen making pizzas.",
+        "ground_truth_image_id": 397133,
+        "nearest_images": [
+          {
+            "image_id": 397133,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000397133.jpg",
+            "reference_caption": "A man is in a kitchen making pizzas."
+          },
+          {
+            "image_id": 329219,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000329219.jpg",
+            "reference_caption": "A man standing next to a dog on the ground."
+          },
+          {
+            "image_id": 213086,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000213086.jpg",
+            "reference_caption": "A man holding an oven door open while he looks in it. "
+          },
+          {
+            "image_id": 177935,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000177935.jpg",
+            "reference_caption": "A large white kitchen range with gold towels on the front."
+          },
+          {
+            "image_id": 142092,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000142092.jpg",
+            "reference_caption": "A pizza with vegetables and cheese resting on a board."
+          }
+        ],
+        "distances": [
+          0.6061325168151743,
+          0.6529355204125071,
+          0.6548743578739115,
+          0.6594425898798684,
+          0.660528446709987
+        ]
+      },
+      {
+        "query_caption": "The dining table near the kitchen has a bowl of fruit on it.",
+        "ground_truth_image_id": 37777,
+        "nearest_images": [
+          {
+            "image_id": 37777,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000037777.jpg",
+            "reference_caption": "The dining table near the kitchen has a bowl of fruit on it."
+          },
+          {
+            "image_id": 221708,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000221708.jpg",
+            "reference_caption": "Lights shine on a wooden dining room table."
+          },
+          {
+            "image_id": 186980,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000186980.jpg",
+            "reference_caption": "A wooden table with two chairs next to a sink."
+          },
+          {
+            "image_id": 34873,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000034873.jpg",
+            "reference_caption": "A kitchen with a counter and a table with chairs."
+          },
+          {
+            "image_id": 509131,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000509131.jpg",
+            "reference_caption": "A bunch of mini bananas are hanging above a bowl of apples and oranges."
+          }
+        ],
+        "distances": [
+          0.5023727556819847,
+          0.571278020073252,
+          0.6034491957302972,
+          0.6050574033959205,
+          0.6177153611760491
+        ]
+      },
+      {
+        "query_caption": "a person with a shopping cart on a city street ",
+        "ground_truth_image_id": 252219,
+        "nearest_images": [
+          {
+            "image_id": 252219,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000252219.jpg",
+            "reference_caption": "a person with a shopping cart on a city street "
+          },
+          {
+            "image_id": 500257,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000500257.jpg",
+            "reference_caption": "A few men working on moving luggage at an airport"
+          },
+          {
+            "image_id": 11197,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000011197.jpg",
+            "reference_caption": "A man prepares to cross the street at a crosswalk"
+          },
+          {
+            "image_id": 356387,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000356387.jpg",
+            "reference_caption": "A row of parked motorcycles sitting in front of a tall building."
+          },
+          {
+            "image_id": 453708,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000453708.jpg",
+            "reference_caption": "A person carrying a crate on their shoulder that is full of bananas."
+          }
+        ],
+        "distances": [
+          0.5672675391800106,
+          0.6128747233308232,
+          0.6236595846670098,
+          0.6351504767088626,
+          0.646594625053798
+        ]
+      },
+      {
+        "query_caption": "A person on a skateboard and bike at a skate park.",
+        "ground_truth_image_id": 87038,
+        "nearest_images": [
+          {
+            "image_id": 87038,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000087038.jpg",
+            "reference_caption": "A person on a skateboard and bike at a skate park."
+          },
+          {
+            "image_id": 441586,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000441586.jpg",
+            "reference_caption": "MAN ON A CONTRAPTION, SURROUNDED BY A BICYCLE AND ANOTHER PERSON"
+          },
+          {
+            "image_id": 35197,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000035197.jpg",
+            "reference_caption": "A person on a skateboard rides down a ramp."
+          },
+          {
+            "image_id": 349860,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000349860.jpg",
+            "reference_caption": "A BOY WITH A BLUE SHIRT AND JEAN PANTS DOING A TRICK WITH HIS SKATEBOARD"
+          },
+          {
+            "image_id": 448365,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000448365.jpg",
+            "reference_caption": "Youngster on a skateboard, trying simple tip up stunt."
+          }
+        ],
+        "distances": [
+          0.5129841321351398,
+          0.5702672529848924,
+          0.5730207122667317,
+          0.5814707973006753,
+          0.6338574050759529
+        ]
+      },
+      {
+        "query_caption": "a blue bike parked on a side walk ",
+        "ground_truth_image_id": 174482,
+        "nearest_images": [
+          {
+            "image_id": 174482,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000174482.jpg",
+            "reference_caption": "a blue bike parked on a side walk "
+          },
+          {
+            "image_id": 203317,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000203317.jpg",
+            "reference_caption": "A red and white bicycle next to a building and door."
+          },
+          {
+            "image_id": 338560,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000338560.jpg",
+            "reference_caption": "A blue fire hydrant posed on a street corner in a city."
+          },
+          {
+            "image_id": 217957,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000217957.jpg",
+            "reference_caption": "A clock is shown with gold detailing around it."
+          },
+          {
+            "image_id": 356387,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000356387.jpg",
+            "reference_caption": "A row of parked motorcycles sitting in front of a tall building."
+          }
+        ],
+        "distances": [
+          0.4909176424892998,
+          0.6260338395220265,
+          0.6433853874490995,
+          0.6663156628101046,
+          0.6665029448014996
+        ]
+      },
+      {
+        "query_caption": "A bathroom that has a broken wall in the shower.",
+        "ground_truth_image_id": 403385,
+        "nearest_images": [
+          {
+            "image_id": 403385,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000403385.jpg",
+            "reference_caption": "A bathroom that has a broken wall in the shower."
+          },
+          {
+            "image_id": 6818,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000006818.jpg",
+            "reference_caption": "a couple of buckets in a white room"
+          },
+          {
+            "image_id": 138819,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000138819.jpg",
+            "reference_caption": "The view of a bathroom with a wall mounted sink."
+          },
+          {
+            "image_id": 547816,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000547816.jpg",
+            "reference_caption": "A view of a bathroom with the shower curtain open."
+          },
+          {
+            "image_id": 306733,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000306733.jpg",
+            "reference_caption": "Bathroom with sink, shower, towels, curtain, and more with window"
+          }
+        ],
+        "distances": [
+          0.5771736217796102,
+          0.6225589554514037,
+          0.638436333967462,
+          0.6521374539584568,
+          0.6546590982538182
+        ]
+      },
+      {
+        "query_caption": "a couple of buckets in a white room",
+        "ground_truth_image_id": 6818,
+        "nearest_images": [
+          {
+            "image_id": 6818,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000006818.jpg",
+            "reference_caption": "a couple of buckets in a white room"
+          },
+          {
+            "image_id": 347693,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000347693.jpg",
+            "reference_caption": "A couple of windows sitting inside of a room."
+          },
+          {
+            "image_id": 397133,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000397133.jpg",
+            "reference_caption": "A man is in a kitchen making pizzas."
+          },
+          {
+            "image_id": 251065,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000251065.jpg",
+            "reference_caption": "A black toilet in a tiled public bathroom stall."
+          },
+          {
+            "image_id": 189310,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000189310.jpg",
+            "reference_caption": "A living area with a red couch, mirror, window and painting."
+          }
+        ],
+        "distances": [
+          0.5008006061740847,
+          0.6472850220663409,
+          0.6533956522133815,
+          0.663132695775739,
+          0.6676897805547227
+        ]
+      },
+      {
+        "query_caption": "The shiny motorcycle has been put on display.",
+        "ground_truth_image_id": 480985,
+        "nearest_images": [
+          {
+            "image_id": 480985,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000480985.jpg",
+            "reference_caption": "The shiny motorcycle has been put on display."
+          },
+          {
+            "image_id": 312421,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000312421.jpg",
+            "reference_caption": "Several middle eastern looking stickers decorate a black briefcase."
+          },
+          {
+            "image_id": 502732,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000502732.jpg",
+            "reference_caption": "A metallic refrigerator freezer in a kitchen next to a cabinet."
+          },
+          {
+            "image_id": 442480,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000442480.jpg",
+            "reference_caption": "A turboprop airplane that is in the hangar for repair. "
+          },
+          {
+            "image_id": 453860,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000453860.jpg",
+            "reference_caption": "A couple of pieces of very nice looking luggage."
+          }
+        ],
+        "distances": [
+          0.5453189871958753,
+          0.638152305396657,
+          0.6626623207574066,
+          0.6701063231261426,
+          0.6709932874892569
+        ]
+      },
+      {
+        "query_caption": "A row of white toilets sitting on top of a dirt ground.",
+        "ground_truth_image_id": 458054,
+        "nearest_images": [
+          {
+            "image_id": 458054,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000458054.jpg",
+            "reference_caption": "A row of white toilets sitting on top of a dirt ground."
+          },
+          {
+            "image_id": 127517,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000127517.jpg",
+            "reference_caption": "A row of surfboards sticking out of the sand sitting next to each other."
+          },
+          {
+            "image_id": 6818,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000006818.jpg",
+            "reference_caption": "a couple of buckets in a white room"
+          },
+          {
+            "image_id": 302165,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000302165.jpg",
+            "reference_caption": "A herd of cows laying on dry grass."
+          },
+          {
+            "image_id": 219283,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000219283.jpg",
+            "reference_caption": "A teddy bear sitting in front of a pile of boxes."
+          }
+        ],
+        "distances": [
+          0.4610376872598039,
+          0.6416238697780485,
+          0.6650339438902408,
+          0.6674139395085658,
+          0.6722559783110362
+        ]
+      },
+      {
+        "query_caption": "A small closed toilet in a cramped space.",
+        "ground_truth_image_id": 331352,
+        "nearest_images": [
+          {
+            "image_id": 331352,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000331352.jpg",
+            "reference_caption": "A small closed toilet in a cramped space."
+          },
+          {
+            "image_id": 251065,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000251065.jpg",
+            "reference_caption": "A black toilet in a tiled public bathroom stall."
+          },
+          {
+            "image_id": 564127,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000564127.jpg",
+            "reference_caption": "Toilet with a black lid and rolls of toilet tissue in a bathroom"
+          },
+          {
+            "image_id": 263796,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000263796.jpg",
+            "reference_caption": "A red toilet in a very small bathroom."
+          },
+          {
+            "image_id": 376442,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000376442.jpg",
+            "reference_caption": "A black plush toy sitting on the lid of a toilet."
+          }
+        ],
+        "distances": [
+          0.5116031367857405,
+          0.5338735189581096,
+          0.5723920459087988,
+          0.5812777132539,
+          0.5888846301831576
+        ]
+      },
+      {
+        "query_caption": "People are walking and riding motorcycles on the street",
+        "ground_truth_image_id": 296649,
+        "nearest_images": [
+          {
+            "image_id": 534827,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000534827.jpg",
+            "reference_caption": "a group of young men are riding their motocycles down the street"
+          },
+          {
+            "image_id": 296649,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000296649.jpg",
+            "reference_caption": "People are walking and riding motorcycles on the street"
+          },
+          {
+            "image_id": 38829,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000038829.jpg",
+            "reference_caption": "A man riding a bicycle with a boy on the back of it."
+          },
+          {
+            "image_id": 463730,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000463730.jpg",
+            "reference_caption": "Two buses parked in a parking lot next to cars."
+          },
+          {
+            "image_id": 412894,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000412894.jpg",
+            "reference_caption": "Dozens of people walking around a metro area"
+          }
+        ],
+        "distances": [
+          0.551998818336426,
+          0.5607462486932905,
+          0.5795941001339613,
+          0.6239565038823469,
+          0.631124479786938
+        ]
+      },
+      {
+        "query_caption": "a person sitting at a desk with a keyboard and monitor ",
+        "ground_truth_image_id": 386912,
+        "nearest_images": [
+          {
+            "image_id": 386912,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000386912.jpg",
+            "reference_caption": "a person sitting at a desk with a keyboard and monitor "
+          },
+          {
+            "image_id": 9483,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000009483.jpg",
+            "reference_caption": "A man in a suit standing next to a control board and computer."
+          },
+          {
+            "image_id": 368294,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000368294.jpg",
+            "reference_caption": "A woman making cigars in a factory with a pink towel on her head. "
+          },
+          {
+            "image_id": 108026,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000108026.jpg",
+            "reference_caption": "A man holds a controller and keyboard with his hands"
+          },
+          {
+            "image_id": 127987,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000127987.jpg",
+            "reference_caption": "A baseball player bobble head next to two computer monitors on a desk."
+          }
+        ],
+        "distances": [
+          0.5605638191054592,
+          0.5973167268461715,
+          0.6168257424454529,
+          0.623975656540291,
+          0.6373189566815344
+        ]
+      },
+      {
+        "query_caption": "A building wall and pair of doors that are open, along with vases of flowers on the outside of the building.",
+        "ground_truth_image_id": 502136,
+        "nearest_images": [
+          {
+            "image_id": 502136,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000502136.jpg",
+            "reference_caption": "A building wall and pair of doors that are open, along with vases of flowers on the outside of the building."
+          },
+          {
+            "image_id": 51961,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000051961.jpg",
+            "reference_caption": "a wall with a bunch of graffiti on it"
+          },
+          {
+            "image_id": 153299,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000153299.jpg",
+            "reference_caption": "two giraffes are standing together outside a barn"
+          },
+          {
+            "image_id": 440475,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000440475.jpg",
+            "reference_caption": "A room with a Tv, potted plant, tables and chairs"
+          },
+          {
+            "image_id": 203317,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000203317.jpg",
+            "reference_caption": "A red and white bicycle next to a building and door."
+          }
+        ],
+        "distances": [
+          0.4723817760439648,
+          0.6475545441604874,
+          0.6527305686675504,
+          0.6541440067799473,
+          0.6553578837546505
+        ]
+      },
+      {
+        "query_caption": "A fluffy white chair that faces away fro a television.",
+        "ground_truth_image_id": 491497,
+        "nearest_images": [
+          {
+            "image_id": 491497,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000491497.jpg",
+            "reference_caption": "A fluffy white chair that faces away fro a television."
+          },
+          {
+            "image_id": 4495,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000004495.jpg",
+            "reference_caption": "A living room with a couch and chair."
+          },
+          {
+            "image_id": 189310,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000189310.jpg",
+            "reference_caption": "A living area with a red couch, mirror, window and painting."
+          },
+          {
+            "image_id": 228144,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000228144.jpg",
+            "reference_caption": "A chair sitting in the middle of the room, in a black and white photo."
+          },
+          {
+            "image_id": 366141,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000366141.jpg",
+            "reference_caption": "a cat laying on top of a chair in the living room "
+          }
+        ],
+        "distances": [
+          0.5427898915734192,
+          0.5899812250362494,
+          0.6138716364057091,
+          0.6360180238916062,
+          0.6444041041958535
+        ]
+      },
+      {
+        "query_caption": "A painting of a table with fruit on top of it.",
+        "ground_truth_image_id": 184791,
+        "nearest_images": [
+          {
+            "image_id": 184791,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000184791.jpg",
+            "reference_caption": "A painting of a table with fruit on top of it."
+          },
+          {
+            "image_id": 509131,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000509131.jpg",
+            "reference_caption": "A bunch of mini bananas are hanging above a bowl of apples and oranges."
+          },
+          {
+            "image_id": 37777,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000037777.jpg",
+            "reference_caption": "The dining table near the kitchen has a bowl of fruit on it."
+          },
+          {
+            "image_id": 389381,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000389381.jpg",
+            "reference_caption": "a bowl of different kinds of food on it"
+          },
+          {
+            "image_id": 339442,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000339442.jpg",
+            "reference_caption": "A sandwich and some grapes are sitting on top of a tablecloth."
+          }
+        ],
+        "distances": [
+          0.5544446225837553,
+          0.61283333097443,
+          0.6606086678813053,
+          0.6735354410839949,
+          0.6775282685445743
+        ]
+      },
+      {
+        "query_caption": "A large jetliner sitting on top of an airport runway.",
+        "ground_truth_image_id": 348881,
+        "nearest_images": [
+          {
+            "image_id": 348881,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000348881.jpg",
+            "reference_caption": "A large jetliner sitting on top of an airport runway."
+          },
+          {
+            "image_id": 384350,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000384350.jpg",
+            "reference_caption": "a white and red plane parked on a tarmac"
+          },
+          {
+            "image_id": 99054,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000099054.jpg",
+            "reference_caption": "some planes on an air port run way"
+          },
+          {
+            "image_id": 442480,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000442480.jpg",
+            "reference_caption": "A turboprop airplane that is in the hangar for repair. "
+          },
+          {
+            "image_id": 35197,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000035197.jpg",
+            "reference_caption": "A person on a skateboard rides down a ramp."
+          }
+        ],
+        "distances": [
+          0.5130496043531837,
+          0.5507883376755303,
+          0.5591051327903005,
+          0.5789913747488744,
+          0.6365940561312899
+        ]
+      },
+      {
+        "query_caption": "Set of toy animals sitting in front of a red wooden wagon.",
+        "ground_truth_image_id": 289393,
+        "nearest_images": [
+          {
+            "image_id": 289393,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000289393.jpg",
+            "reference_caption": "Set of toy animals sitting in front of a red wooden wagon."
+          },
+          {
+            "image_id": 82180,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000082180.jpg",
+            "reference_caption": "A teddy bear and a stuffed raccoon sitting on a faded wooden outdoor chair."
+          },
+          {
+            "image_id": 383386,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000383386.jpg",
+            "reference_caption": "a couple of stuffed bears are on a bed"
+          },
+          {
+            "image_id": 107226,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000107226.jpg",
+            "reference_caption": "Two men being drug on buggies by dogs."
+          },
+          {
+            "image_id": 441586,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000441586.jpg",
+            "reference_caption": "MAN ON A CONTRAPTION, SURROUNDED BY A BICYCLE AND ANOTHER PERSON"
+          }
+        ],
+        "distances": [
+          0.5174704592663718,
+          0.6634837662619042,
+          0.7093793725768405,
+          0.709463181374007,
+          0.7238035173516555
+        ]
+      },
+      {
+        "query_caption": " a bench sitting in the grass facing the water and boats ",
+        "ground_truth_image_id": 522713,
+        "nearest_images": [
+          {
+            "image_id": 522713,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000522713.jpg",
+            "reference_caption": " a bench sitting in the grass facing the water and boats "
+          },
+          {
+            "image_id": 537153,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000537153.jpg",
+            "reference_caption": "A couple of people sitting on top of a wooden bench."
+          },
+          {
+            "image_id": 465675,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000465675.jpg",
+            "reference_caption": "A beach with two boats and a tractor."
+          },
+          {
+            "image_id": 79837,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000079837.jpg",
+            "reference_caption": "The moon shining down on a harbor full of ships."
+          },
+          {
+            "image_id": 121506,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000121506.jpg",
+            "reference_caption": "A wooden table with an inverted umbrella on it."
+          }
+        ],
+        "distances": [
+          0.491919755792239,
+          0.6004322377317017,
+          0.6519143622252591,
+          0.6826182602341938,
+          0.6905169033720882
+        ]
+      },
+      {
+        "query_caption": "a flock of goats and some men watching them",
+        "ground_truth_image_id": 181666,
+        "nearest_images": [
+          {
+            "image_id": 181666,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000181666.jpg",
+            "reference_caption": "a flock of goats and some men watching them"
+          },
+          {
+            "image_id": 559956,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000559956.jpg",
+            "reference_caption": "A group of people kneeling down beside some sheep."
+          },
+          {
+            "image_id": 212559,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000212559.jpg",
+            "reference_caption": "A stable full of lambs standing and laying around."
+          },
+          {
+            "image_id": 295231,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000295231.jpg",
+            "reference_caption": "A group of animals standing on top of a grass covered field."
+          },
+          {
+            "image_id": 461405,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000461405.jpg",
+            "reference_caption": "A group of sheep in a grassy area with trees in the back ground."
+          }
+        ],
+        "distances": [
+          0.47921169628018856,
+          0.5740442897476872,
+          0.5986351667964582,
+          0.612839218895888,
+          0.6273935109249067
+        ]
+      },
+      {
+        "query_caption": "Several cars are parked in front of a building.",
+        "ground_truth_image_id": 17627,
+        "nearest_images": [
+          {
+            "image_id": 17627,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000017627.jpg",
+            "reference_caption": "Several cars are parked in front of a building."
+          },
+          {
+            "image_id": 367680,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000367680.jpg",
+            "reference_caption": "Cars, truck and carriages are traveling on the road"
+          },
+          {
+            "image_id": 296649,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000296649.jpg",
+            "reference_caption": "People are walking and riding motorcycles on the street"
+          },
+          {
+            "image_id": 555050,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000555050.jpg",
+            "reference_caption": "A car driving in an intersection, past a furniture shop. "
+          },
+          {
+            "image_id": 463730,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000463730.jpg",
+            "reference_caption": "Two buses parked in a parking lot next to cars."
+          }
+        ],
+        "distances": [
+          0.5537837398238219,
+          0.6161722905383811,
+          0.6259617387852595,
+          0.6355182932332687,
+          0.6459927740203328
+        ]
+      }
+    ]
+  },
+  "BLIP2": {
+    "num_samples": 500,
+    "image_to_text": [
+      {
+        "query_image_id": 397133,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000397133.jpg",
+        "ground_truth_caption": "A man is in a kitchen making pizzas.",
+        "nearest_captions": [
+          "Several middle eastern looking stickers decorate a black briefcase.",
+          "Large assortment of small and large vases displayed outdoors.",
+          "a man wearing a top hat and a red tie ",
+          "The front of a restaurant with someone holding up food ",
+          "A picture of a recently married couple displayed behind glass."
+        ],
+        "distances": [
+          0.9974921456824299,
+          0.9978276174342916,
+          0.9984663603635442,
+          0.9985263172225081,
+          1.000250861653088
+        ]
+      },
+      {
+        "query_image_id": 37777,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000037777.jpg",
+        "ground_truth_caption": "The dining table near the kitchen has a bowl of fruit on it.",
+        "nearest_captions": [
+          "some planes on an air port run way",
+          "The front of a restaurant with someone holding up food ",
+          "Girl trying out a game at a trade show.",
+          "A man holding a silver flip phone open in front of his face.",
+          "a close up of a dog near a bowl"
+        ],
+        "distances": [
+          0.9883533350667875,
+          0.9891378205770162,
+          0.9901339205472388,
+          0.9904164652335995,
+          0.9915155346336156
+        ]
+      },
+      {
+        "query_image_id": 252219,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000252219.jpg",
+        "ground_truth_caption": "a person with a shopping cart on a city street ",
+        "nearest_captions": [
+          "a blue bike parked on a side walk ",
+          "a stop sign and a white and green street sign and a tree",
+          "A cat standing next to a bike parked against a wall.",
+          "A city sidewalk with people walking up and down ",
+          "a couple of young kids are sitting together"
+        ],
+        "distances": [
+          0.9904455228468482,
+          0.994592610138572,
+          0.9962156445466651,
+          0.9963711872766353,
+          0.9967767013402048
+        ]
+      },
+      {
+        "query_image_id": 87038,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000087038.jpg",
+        "ground_truth_caption": "A person on a skateboard and bike at a skate park.",
+        "nearest_captions": [
+          "a blue bike parked on a side walk ",
+          "Large assortment of small and large vases displayed outdoors.",
+          "a couple of young kids are sitting together",
+          "A cat standing next to a bike parked against a wall.",
+          "some planes on an air port run way"
+        ],
+        "distances": [
+          0.9957739903299573,
+          0.9958085156821368,
+          0.9973068174798604,
+          0.9981445063772961,
+          0.9981961927674277
+        ]
+      },
+      {
+        "query_image_id": 174482,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000174482.jpg",
+        "ground_truth_caption": "a blue bike parked on a side walk ",
+        "nearest_captions": [
+          "a blue bike parked on a side walk ",
+          "A cat standing next to a bike parked against a wall.",
+          "a stop sign and a white and green street sign and a tree",
+          "A city sidewalk with people walking up and down ",
+          "Several skiers glide down a hilly landscape covered in snow. "
+        ],
+        "distances": [
+          0.9873371403847367,
+          0.9952759941182332,
+          0.9983701840769026,
+          0.9987173229726758,
+          0.9992642174541523
+        ]
+      },
+      {
+        "query_image_id": 403385,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000403385.jpg",
+        "ground_truth_caption": "A bathroom that has a broken wall in the shower.",
+        "nearest_captions": [
+          "A picture of a recently married couple displayed behind glass.",
+          "a close up of a dog near a bowl",
+          "A cat standing next to a bike parked against a wall.",
+          "a man wearing a top hat and a red tie ",
+          "a stop sign and a white and green street sign and a tree"
+        ],
+        "distances": [
+          0.9829946117101495,
+          0.9888184744633679,
+          0.9888804748804595,
+          0.9903183006526872,
+          0.9911536980820107
+        ]
+      },
+      {
+        "query_image_id": 6818,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000006818.jpg",
+        "ground_truth_caption": "a couple of buckets in a white room",
+        "nearest_captions": [
+          "A picture of a recently married couple displayed behind glass.",
+          "a stop sign and a white and green street sign and a tree",
+          "A cat standing next to a bike parked against a wall.",
+          "an old photo of a little girl sitting on her dads lap ",
+          "A counter topped with a large white frosted cake sitting next to small pastry."
+        ],
+        "distances": [
+          0.9877098518993812,
+          0.9914356605500024,
+          0.9928130533671442,
+          0.9933702229625861,
+          0.9946649111152733
+        ]
+      },
+      {
+        "query_image_id": 480985,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000480985.jpg",
+        "ground_truth_caption": "The shiny motorcycle has been put on display.",
+        "nearest_captions": [
+          "Several skiers glide down a hilly landscape covered in snow. ",
+          "A picture of a recently married couple displayed behind glass.",
+          "a man wearing a top hat and a red tie ",
+          "A cat standing next to a bike parked against a wall.",
+          "Large assortment of small and large vases displayed outdoors."
+        ],
+        "distances": [
+          0.9931367858063498,
+          0.993193683606357,
+          0.9936509675639574,
+          0.9939338404100809,
+          0.9943219494783121
+        ]
+      },
+      {
+        "query_image_id": 458054,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000458054.jpg",
+        "ground_truth_caption": "A row of white toilets sitting on top of a dirt ground.",
+        "nearest_captions": [
+          "a close up of a dog near a bowl",
+          "A picture of a recently married couple displayed behind glass.",
+          "Three birds walking around a dry grass field.",
+          "an old photo of a little girl sitting on her dads lap ",
+          "some little stones sitting around a dime "
+        ],
+        "distances": [
+          0.9952517931386103,
+          0.9954807023615758,
+          0.9959967471757843,
+          0.9966724132925879,
+          0.9973182285717966
+        ]
+      },
+      {
+        "query_image_id": 331352,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000331352.jpg",
+        "ground_truth_caption": "A small closed toilet in a cramped space.",
+        "nearest_captions": [
+          "A picture of a recently married couple displayed behind glass.",
+          "a man wearing a top hat and a red tie ",
+          "an old photo of a little girl sitting on her dads lap ",
+          "A man holding a silver flip phone open in front of his face.",
+          "a stop sign and a white and green street sign and a tree"
+        ],
+        "distances": [
+          0.9912205151615018,
+          0.9951368493264721,
+          0.9966324542638868,
+          0.99687485061347,
+          0.9975318335679195
+        ]
+      },
+      {
+        "query_image_id": 296649,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000296649.jpg",
+        "ground_truth_caption": "People are walking and riding motorcycles on the street",
+        "nearest_captions": [
+          "a blue bike parked on a side walk ",
+          "a couple of young kids are sitting together",
+          "A cat standing next to a bike parked against a wall.",
+          "People are walking and riding motorcycles on the street",
+          "Large assortment of small and large vases displayed outdoors."
+        ],
+        "distances": [
+          0.9861222144693101,
+          0.9938069761424471,
+          0.9941306558537876,
+          0.9946988027146403,
+          0.9947764789273836
+        ]
+      },
+      {
+        "query_image_id": 386912,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000386912.jpg",
+        "ground_truth_caption": "a person sitting at a desk with a keyboard and monitor ",
+        "nearest_captions": [
+          "Several middle eastern looking stickers decorate a black briefcase.",
+          "A picture of a recently married couple displayed behind glass.",
+          "A cat standing next to a bike parked against a wall.",
+          "A man holding a silver flip phone open in front of his face.",
+          "A counter topped with a large white frosted cake sitting next to small pastry."
+        ],
+        "distances": [
+          0.9919545851619742,
+          0.9953111054701462,
+          0.9959679837663411,
+          0.9968405715757027,
+          0.99713687778047
+        ]
+      },
+      {
+        "query_image_id": 502136,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000502136.jpg",
+        "ground_truth_caption": "A building wall and pair of doors that are open, along with vases of flowers on the outside of the building.",
+        "nearest_captions": [
+          "some planes on an air port run way",
+          "A picture of a recently married couple displayed behind glass.",
+          "Several middle eastern looking stickers decorate a black briefcase.",
+          "a couple of young kids are sitting together",
+          "a blue bike parked on a side walk "
+        ],
+        "distances": [
+          0.9929710427629925,
+          0.9936907582870866,
+          0.9949124028929001,
+          0.9956891368332096,
+          0.9973340010343186
+        ]
+      },
+      {
+        "query_image_id": 491497,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000491497.jpg",
+        "ground_truth_caption": "A fluffy white chair that faces away fro a television.",
+        "nearest_captions": [
+          "An orange and white cat standing in front of a flat screen TV",
+          "Several middle eastern looking stickers decorate a black briefcase.",
+          "A picture of a recently married couple displayed behind glass.",
+          "A man holding a silver flip phone open in front of his face.",
+          "A bedroom with a large bed sitting next to a black dresser."
+        ],
+        "distances": [
+          0.9972729100862688,
+          0.9973239018207084,
+          0.9990349814869192,
+          0.9991479757320505,
+          0.9998319362873869
+        ]
+      },
+      {
+        "query_image_id": 184791,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000184791.jpg",
+        "ground_truth_caption": "A painting of a table with fruit on top of it.",
+        "nearest_captions": [
+          "A picture of a recently married couple displayed behind glass.",
+          "Lights shine on a wooden dining room table.",
+          "a couple of young kids are sitting together",
+          "a table full of bananas being sold outside",
+          "some planes on an air port run way"
+        ],
+        "distances": [
+          0.995596857201095,
+          0.9985864394259224,
+          1.0005097680864896,
+          1.0012398641188671,
+          1.002156877739906
+        ]
+      },
+      {
+        "query_image_id": 348881,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000348881.jpg",
+        "ground_truth_caption": "A large jetliner sitting on top of an airport runway.",
+        "nearest_captions": [
+          "some planes on an air port run way",
+          "a blue bike parked on a side walk ",
+          "Three birds walking around a dry grass field.",
+          "A cat standing next to a bike parked against a wall.",
+          "A yellow taxi cab sitting below tall buildings."
+        ],
+        "distances": [
+          1.0000861263584988,
+          1.00334153203381,
+          1.0050460895863393,
+          1.0051077088161577,
+          1.005524089316117
+        ]
+      },
+      {
+        "query_image_id": 289393,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000289393.jpg",
+        "ground_truth_caption": "Set of toy animals sitting in front of a red wooden wagon.",
+        "nearest_captions": [
+          "A picture of a recently married couple displayed behind glass.",
+          "a couple of young kids are sitting together",
+          "Large assortment of small and large vases displayed outdoors.",
+          "A counter topped with a large white frosted cake sitting next to small pastry.",
+          "Outdoor show with sheep prominent on grass field."
+        ],
+        "distances": [
+          0.9994748655199147,
+          1.002518516869299,
+          1.0053933757191529,
+          1.0074963085916355,
+          1.0083779860249573
+        ]
+      },
+      {
+        "query_image_id": 522713,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000522713.jpg",
+        "ground_truth_caption": " a bench sitting in the grass facing the water and boats ",
+        "nearest_captions": [
+          "Three birds walking around a dry grass field.",
+          "some planes on an air port run way",
+          "a blue bike parked on a side walk ",
+          "Several skiers glide down a hilly landscape covered in snow. ",
+          "Large assortment of small and large vases displayed outdoors."
+        ],
+        "distances": [
+          0.9884967478704121,
+          0.9938536860301787,
+          0.9941407227992716,
+          0.9949000379032099,
+          0.9970083569991064
+        ]
+      },
+      {
+        "query_image_id": 181666,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000181666.jpg",
+        "ground_truth_caption": "a flock of goats and some men watching them",
+        "nearest_captions": [
+          "Three birds walking around a dry grass field.",
+          "Large assortment of small and large vases displayed outdoors.",
+          "Outdoor show with sheep prominent on grass field.",
+          "Animals trying to either move or go around fallen tree branches",
+          "a couple of young kids are sitting together"
+        ],
+        "distances": [
+          0.9960707211918445,
+          0.999536023643795,
+          0.9999204481681012,
+          1.0005140053153134,
+          1.0035066141304363
+        ]
+      },
+      {
+        "query_image_id": 17627,
+        "query_image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000017627.jpg",
+        "ground_truth_caption": "Several cars are parked in front of a building.",
+        "nearest_captions": [
+          "a blue bike parked on a side walk ",
+          "Two buses parked in a parking lot next to cars.",
+          "a couple of young kids are sitting together",
+          "a stop sign and a white and green street sign and a tree",
+          "A cat standing next to a bike parked against a wall."
+        ],
+        "distances": [
+          0.9880273119690431,
+          0.9931163837117808,
+          0.9944762171086138,
+          0.9947153574187287,
+          0.9953247888842464
+        ]
+      }
+    ],
+    "text_to_image": [
+      {
+        "query_caption": "A man is in a kitchen making pizzas.",
+        "ground_truth_image_id": 397133,
+        "nearest_images": [
+          {
+            "image_id": 43314,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000043314.jpg",
+            "reference_caption": "A man flying through the air while riding skis."
+          },
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 37777,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000037777.jpg",
+            "reference_caption": "The dining table near the kitchen has a bowl of fruit on it."
+          },
+          {
+            "image_id": 127182,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000127182.jpg",
+            "reference_caption": "A kitchen filled with metal appliances and a window."
+          },
+          {
+            "image_id": 221708,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000221708.jpg",
+            "reference_caption": "Lights shine on a wooden dining room table."
+          }
+        ],
+        "distances": [
+          1.0250318779288332,
+          1.0258347876880782,
+          1.0261927638873574,
+          1.0280628639404132,
+          1.0281723830601182
+        ]
+      },
+      {
+        "query_caption": "The dining table near the kitchen has a bowl of fruit on it.",
+        "ground_truth_image_id": 37777,
+        "nearest_images": [
+          {
+            "image_id": 37777,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000037777.jpg",
+            "reference_caption": "The dining table near the kitchen has a bowl of fruit on it."
+          },
+          {
+            "image_id": 57238,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000057238.jpg",
+            "reference_caption": "A white refrigerator freezer sitting inside of a kitchen."
+          },
+          {
+            "image_id": 127182,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000127182.jpg",
+            "reference_caption": "A kitchen filled with metal appliances and a window."
+          },
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 221708,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000221708.jpg",
+            "reference_caption": "Lights shine on a wooden dining room table."
+          }
+        ],
+        "distances": [
+          1.005029904180461,
+          1.0076788545673168,
+          1.008136447383162,
+          1.0083717071193061,
+          1.0087504870387187
+        ]
+      },
+      {
+        "query_caption": "a person with a shopping cart on a city street ",
+        "ground_truth_image_id": 252219,
+        "nearest_images": [
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 43314,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000043314.jpg",
+            "reference_caption": "A man flying through the air while riding skis."
+          },
+          {
+            "image_id": 456496,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000456496.jpg",
+            "reference_caption": "A woman sitting in front of the Eiffel tower near pigeons."
+          },
+          {
+            "image_id": 453860,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000453860.jpg",
+            "reference_caption": "A couple of pieces of very nice looking luggage."
+          },
+          {
+            "image_id": 516708,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000516708.jpg",
+            "reference_caption": "A street sign that reads Sparta sitting next to a tall building."
+          }
+        ],
+        "distances": [
+          0.9847577017989056,
+          0.9888615222366002,
+          0.9911104802357957,
+          0.9913714527349282,
+          0.992496943814878
+        ]
+      },
+      {
+        "query_caption": "A person on a skateboard and bike at a skate park.",
+        "ground_truth_image_id": 87038,
+        "nearest_images": [
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 43314,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000043314.jpg",
+            "reference_caption": "A man flying through the air while riding skis."
+          },
+          {
+            "image_id": 1490,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000001490.jpg",
+            "reference_caption": "A man in a wet suit stands on a surfboard and rows with a paddle."
+          },
+          {
+            "image_id": 37777,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000037777.jpg",
+            "reference_caption": "The dining table near the kitchen has a bowl of fruit on it."
+          },
+          {
+            "image_id": 127182,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000127182.jpg",
+            "reference_caption": "A kitchen filled with metal appliances and a window."
+          }
+        ],
+        "distances": [
+          1.0065329736409399,
+          1.0153828769716364,
+          1.0160899747554497,
+          1.0201096690077414,
+          1.0201845801851595
+        ]
+      },
+      {
+        "query_caption": "a blue bike parked on a side walk ",
+        "ground_truth_image_id": 174482,
+        "nearest_images": [
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 296649,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000296649.jpg",
+            "reference_caption": "People are walking and riding motorcycles on the street"
+          },
+          {
+            "image_id": 367680,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000367680.jpg",
+            "reference_caption": "Cars, truck and carriages are traveling on the road"
+          },
+          {
+            "image_id": 174482,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000174482.jpg",
+            "reference_caption": "a blue bike parked on a side walk "
+          },
+          {
+            "image_id": 288042,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000288042.jpg",
+            "reference_caption": "A gentleman walking in the rain along a river."
+          }
+        ],
+        "distances": [
+          0.9760231621065487,
+          0.9861222144693101,
+          0.9868157820709628,
+          0.9873371403847367,
+          0.9873687686825655
+        ]
+      },
+      {
+        "query_caption": "A bathroom that has a broken wall in the shower.",
+        "ground_truth_image_id": 403385,
+        "nearest_images": [
+          {
+            "image_id": 403385,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000403385.jpg",
+            "reference_caption": "A bathroom that has a broken wall in the shower."
+          },
+          {
+            "image_id": 547816,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000547816.jpg",
+            "reference_caption": "A view of a bathroom with the shower curtain open."
+          },
+          {
+            "image_id": 569917,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000569917.jpg",
+            "reference_caption": "A small bathroom has a sink and a storage rack over the toilet."
+          },
+          {
+            "image_id": 127182,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000127182.jpg",
+            "reference_caption": "A kitchen filled with metal appliances and a window."
+          },
+          {
+            "image_id": 306733,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000306733.jpg",
+            "reference_caption": "Bathroom with sink, shower, towels, curtain, and more with window"
+          }
+        ],
+        "distances": [
+          1.0037476978682065,
+          1.007041350010702,
+          1.008426815807291,
+          1.0087794168480047,
+          1.0091138499760166
+        ]
+      },
+      {
+        "query_caption": "a couple of buckets in a white room",
+        "ground_truth_image_id": 6818,
+        "nearest_images": [
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 403385,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000403385.jpg",
+            "reference_caption": "A bathroom that has a broken wall in the shower."
+          },
+          {
+            "image_id": 39956,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000039956.jpg",
+            "reference_caption": "A messy room with door and bed and chair."
+          },
+          {
+            "image_id": 293044,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000293044.jpg",
+            "reference_caption": "A plastic dish with the food sectioned off."
+          },
+          {
+            "image_id": 578500,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000578500.jpg",
+            "reference_caption": "a living room that has some couches and tables in it"
+          }
+        ],
+        "distances": [
+          1.0084275882449425,
+          1.0110587074723212,
+          1.011533330979658,
+          1.011542595400623,
+          1.01176576978947
+        ]
+      },
+      {
+        "query_caption": "The shiny motorcycle has been put on display.",
+        "ground_truth_image_id": 480985,
+        "nearest_images": [
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 480985,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000480985.jpg",
+            "reference_caption": "The shiny motorcycle has been put on display."
+          },
+          {
+            "image_id": 332570,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000332570.jpg",
+            "reference_caption": "the portable device is displaying a very important message."
+          },
+          {
+            "image_id": 127182,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000127182.jpg",
+            "reference_caption": "A kitchen filled with metal appliances and a window."
+          },
+          {
+            "image_id": 143931,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000143931.jpg",
+            "reference_caption": "A political candidate advertisement on the side of a coach bus."
+          }
+        ],
+        "distances": [
+          1.00659609112933,
+          1.007665358368933,
+          1.0090504150949964,
+          1.0096322592945564,
+          1.0101998799853171
+        ]
+      },
+      {
+        "query_caption": "A row of white toilets sitting on top of a dirt ground.",
+        "ground_truth_image_id": 458054,
+        "nearest_images": [
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 263796,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000263796.jpg",
+            "reference_caption": "A red toilet in a very small bathroom."
+          },
+          {
+            "image_id": 403385,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000403385.jpg",
+            "reference_caption": "A bathroom that has a broken wall in the shower."
+          },
+          {
+            "image_id": 306733,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000306733.jpg",
+            "reference_caption": "Bathroom with sink, shower, towels, curtain, and more with window"
+          },
+          {
+            "image_id": 43314,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000043314.jpg",
+            "reference_caption": "A man flying through the air while riding skis."
+          }
+        ],
+        "distances": [
+          1.0056741845947554,
+          1.010759707987785,
+          1.0107744184920424,
+          1.0108123186245368,
+          1.0112163896187663
+        ]
+      },
+      {
+        "query_caption": "A small closed toilet in a cramped space.",
+        "ground_truth_image_id": 331352,
+        "nearest_images": [
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 569917,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000569917.jpg",
+            "reference_caption": "A small bathroom has a sink and a storage rack over the toilet."
+          },
+          {
+            "image_id": 403385,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000403385.jpg",
+            "reference_caption": "A bathroom that has a broken wall in the shower."
+          },
+          {
+            "image_id": 485802,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000485802.jpg",
+            "reference_caption": "An airplane leaving a trail in the sky."
+          },
+          {
+            "image_id": 300659,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000300659.jpg",
+            "reference_caption": "A formation of airplanes flying through a  blue sky."
+          }
+        ],
+        "distances": [
+          1.0002134441134127,
+          1.00465105139291,
+          1.0051089534373268,
+          1.0060154156098176,
+          1.0062084727244573
+        ]
+      },
+      {
+        "query_caption": "People are walking and riding motorcycles on the street",
+        "ground_truth_image_id": 296649,
+        "nearest_images": [
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 356387,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000356387.jpg",
+            "reference_caption": "A row of parked motorcycles sitting in front of a tall building."
+          },
+          {
+            "image_id": 296649,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000296649.jpg",
+            "reference_caption": "People are walking and riding motorcycles on the street"
+          },
+          {
+            "image_id": 43314,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000043314.jpg",
+            "reference_caption": "A man flying through the air while riding skis."
+          },
+          {
+            "image_id": 480985,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000480985.jpg",
+            "reference_caption": "The shiny motorcycle has been put on display."
+          }
+        ],
+        "distances": [
+          0.9848760915669574,
+          0.9934581496405127,
+          0.9946988027146403,
+          0.9948257440136683,
+          0.9955551368491093
+        ]
+      },
+      {
+        "query_caption": "a person sitting at a desk with a keyboard and monitor ",
+        "ground_truth_image_id": 386912,
+        "nearest_images": [
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 228144,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000228144.jpg",
+            "reference_caption": "A chair sitting in the middle of the room, in a black and white photo."
+          },
+          {
+            "image_id": 63740,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000063740.jpg",
+            "reference_caption": "Two computers sitting on top of a desk."
+          },
+          {
+            "image_id": 403385,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000403385.jpg",
+            "reference_caption": "A bathroom that has a broken wall in the shower."
+          },
+          {
+            "image_id": 306733,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000306733.jpg",
+            "reference_caption": "Bathroom with sink, shower, towels, curtain, and more with window"
+          }
+        ],
+        "distances": [
+          0.9937274695316951,
+          0.9955821773871459,
+          0.9959547110864657,
+          0.9960312546745536,
+          0.9965641758828893
+        ]
+      },
+      {
+        "query_caption": "A building wall and pair of doors that are open, along with vases of flowers on the outside of the building.",
+        "ground_truth_image_id": 502136,
+        "nearest_images": [
+          {
+            "image_id": 43314,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000043314.jpg",
+            "reference_caption": "A man flying through the air while riding skis."
+          },
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 51961,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000051961.jpg",
+            "reference_caption": "a wall with a bunch of graffiti on it"
+          },
+          {
+            "image_id": 127182,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000127182.jpg",
+            "reference_caption": "A kitchen filled with metal appliances and a window."
+          },
+          {
+            "image_id": 306733,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000306733.jpg",
+            "reference_caption": "Bathroom with sink, shower, towels, curtain, and more with window"
+          }
+        ],
+        "distances": [
+          0.9994175877322863,
+          1.0014924255969104,
+          1.0070486519155797,
+          1.0098047050738133,
+          1.0105529465113292
+        ]
+      },
+      {
+        "query_caption": "A fluffy white chair that faces away fro a television.",
+        "ground_truth_image_id": 491497,
+        "nearest_images": [
+          {
+            "image_id": 453860,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000453860.jpg",
+            "reference_caption": "A couple of pieces of very nice looking luggage."
+          },
+          {
+            "image_id": 332570,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000332570.jpg",
+            "reference_caption": "the portable device is displaying a very important message."
+          },
+          {
+            "image_id": 43314,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000043314.jpg",
+            "reference_caption": "A man flying through the air while riding skis."
+          },
+          {
+            "image_id": 491497,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000491497.jpg",
+            "reference_caption": "A fluffy white chair that faces away fro a television."
+          },
+          {
+            "image_id": 485802,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000485802.jpg",
+            "reference_caption": "An airplane leaving a trail in the sky."
+          }
+        ],
+        "distances": [
+          1.010822467414645,
+          1.0124408974699435,
+          1.0126200966841934,
+          1.012822092339819,
+          1.0144256749298064
+        ]
+      },
+      {
+        "query_caption": "A painting of a table with fruit on top of it.",
+        "ground_truth_image_id": 184791,
+        "nearest_images": [
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 43314,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000043314.jpg",
+            "reference_caption": "A man flying through the air while riding skis."
+          },
+          {
+            "image_id": 37777,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000037777.jpg",
+            "reference_caption": "The dining table near the kitchen has a bowl of fruit on it."
+          },
+          {
+            "image_id": 221708,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000221708.jpg",
+            "reference_caption": "Lights shine on a wooden dining room table."
+          },
+          {
+            "image_id": 306733,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000306733.jpg",
+            "reference_caption": "Bathroom with sink, shower, towels, curtain, and more with window"
+          }
+        ],
+        "distances": [
+          1.0084761203408559,
+          1.0101359852799887,
+          1.0135357983412914,
+          1.0144011278010459,
+          1.0149732774988751
+        ]
+      },
+      {
+        "query_caption": "A large jetliner sitting on top of an airport runway.",
+        "ground_truth_image_id": 348881,
+        "nearest_images": [
+          {
+            "image_id": 485802,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000485802.jpg",
+            "reference_caption": "An airplane leaving a trail in the sky."
+          },
+          {
+            "image_id": 199977,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000199977.jpg",
+            "reference_caption": "The airplane in the sky is doing tricks while spitting out smoke. "
+          },
+          {
+            "image_id": 379453,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000379453.jpg",
+            "reference_caption": "An Air Force jet flying in a deep blue sky."
+          },
+          {
+            "image_id": 300659,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000300659.jpg",
+            "reference_caption": "A formation of airplanes flying through a  blue sky."
+          },
+          {
+            "image_id": 79837,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000079837.jpg",
+            "reference_caption": "The moon shining down on a harbor full of ships."
+          }
+        ],
+        "distances": [
+          1.0096375535697553,
+          1.0105433824434815,
+          1.0111037622078467,
+          1.0118141994803593,
+          1.013800942935709
+        ]
+      },
+      {
+        "query_caption": "Set of toy animals sitting in front of a red wooden wagon.",
+        "ground_truth_image_id": 289393,
+        "nearest_images": [
+          {
+            "image_id": 43314,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000043314.jpg",
+            "reference_caption": "A man flying through the air while riding skis."
+          },
+          {
+            "image_id": 1490,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000001490.jpg",
+            "reference_caption": "A man in a wet suit stands on a surfboard and rows with a paddle."
+          },
+          {
+            "image_id": 465675,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000465675.jpg",
+            "reference_caption": "A beach with two boats and a tractor."
+          },
+          {
+            "image_id": 300659,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000300659.jpg",
+            "reference_caption": "A formation of airplanes flying through a  blue sky."
+          },
+          {
+            "image_id": 37777,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000037777.jpg",
+            "reference_caption": "The dining table near the kitchen has a bowl of fruit on it."
+          }
+        ],
+        "distances": [
+          1.0030810132682602,
+          1.0067924296976207,
+          1.007315976432751,
+          1.0075939618911747,
+          1.0076174976151953
+        ]
+      },
+      {
+        "query_caption": " a bench sitting in the grass facing the water and boats ",
+        "ground_truth_image_id": 522713,
+        "nearest_images": [
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 43314,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000043314.jpg",
+            "reference_caption": "A man flying through the air while riding skis."
+          },
+          {
+            "image_id": 143931,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000143931.jpg",
+            "reference_caption": "A political candidate advertisement on the side of a coach bus."
+          },
+          {
+            "image_id": 57238,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000057238.jpg",
+            "reference_caption": "A white refrigerator freezer sitting inside of a kitchen."
+          },
+          {
+            "image_id": 522713,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000522713.jpg",
+            "reference_caption": " a bench sitting in the grass facing the water and boats "
+          }
+        ],
+        "distances": [
+          0.9908473432201425,
+          0.9969519493690672,
+          0.9970268485735327,
+          0.9971562929764546,
+          0.9973583034236501
+        ]
+      },
+      {
+        "query_caption": "a flock of goats and some men watching them",
+        "ground_truth_image_id": 181666,
+        "nearest_images": [
+          {
+            "image_id": 453860,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000453860.jpg",
+            "reference_caption": "A couple of pieces of very nice looking luggage."
+          },
+          {
+            "image_id": 43314,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000043314.jpg",
+            "reference_caption": "A man flying through the air while riding skis."
+          },
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 107226,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000107226.jpg",
+            "reference_caption": "Two men being drug on buggies by dogs."
+          },
+          {
+            "image_id": 332570,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000332570.jpg",
+            "reference_caption": "the portable device is displaying a very important message."
+          }
+        ],
+        "distances": [
+          1.0158043874609655,
+          1.016872317160075,
+          1.0180989462643582,
+          1.0210500655135564,
+          1.0215981284201843
+        ]
+      },
+      {
+        "query_caption": "Several cars are parked in front of a building.",
+        "ground_truth_image_id": 17627,
+        "nearest_images": [
+          {
+            "image_id": 226111,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000226111.jpg",
+            "reference_caption": "A No bicycles, skates or skateboards sign on a pole."
+          },
+          {
+            "image_id": 43314,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000043314.jpg",
+            "reference_caption": "A man flying through the air while riding skis."
+          },
+          {
+            "image_id": 143931,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000143931.jpg",
+            "reference_caption": "A political candidate advertisement on the side of a coach bus."
+          },
+          {
+            "image_id": 485802,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000485802.jpg",
+            "reference_caption": "An airplane leaving a trail in the sky."
+          },
+          {
+            "image_id": 17627,
+            "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000017627.jpg",
+            "reference_caption": "Several cars are parked in front of a building."
+          }
+        ],
+        "distances": [
+          0.9981017614056054,
+          0.9993288236575297,
+          1.0002779210572488,
+          1.0012900693738689,
+          1.0017959451442342
+        ]
+      }
+    ]
+  }
+}
