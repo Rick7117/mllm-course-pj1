@@ -1,5 +1,6 @@
 {
   "BLIP": {
+    "model_cache": "blip_itm_base_coco_modelscope",
     "num_samples": 30,
     "metrics": {
       "BLEU-1": 0.5929081603806088,
@@ -253,20 +254,21 @@
     ]
   },
   "BLIP2": {
+    "model_cache": "blip2_coco_modelscope",
     "num_samples": 30,
     "metrics": {
-      "BLEU-1": 0.640838391436104,
-      "BLEU-2": 0.4695689244493473,
-      "BLEU-3": 0.3142277266528762,
-      "BLEU-4": 0.18654235164956703,
-      "CIDEr": 0.7077516547825585,
-      "ROUGE-L": 0.38601014872752754
+      "BLEU-1": 0.7173144876299742,
+      "BLEU-2": 0.5533582871230813,
+      "BLEU-3": 0.39534249230745605,
+      "BLEU-4": 0.2675289532260342,
+      "CIDEr": 0.8995980275254514,
+      "ROUGE-L": 0.45171100704597994
     },
     "qualitative_examples": [
       {
         "image_id": 397133,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000397133.jpg",
-        "prediction": "a woman in a kitchen with a man in a kitchen\n",
+        "prediction": "a man in a kitchen preparing food",
         "ground_truths": [
           "A man is in a kitchen making pizzas.",
           "Man in apron standing on front of oven with pans and bakeware",
@@ -278,7 +280,7 @@
       {
         "image_id": 37777,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000037777.jpg",
-        "prediction": "a kitchen with a table, chairs, and a refrigerator\n",
+        "prediction": "a kitchen with a table and a refrigerator",
         "ground_truths": [
           "The dining table near the kitchen has a bowl of fruit on it.",
           "A small kitchen has various appliances and a table.",
@@ -290,7 +292,7 @@
       {
         "image_id": 252219,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000252219.jpg",
-        "prediction": "a man and a woman walking down the street\n",
+        "prediction": "a man is standing next to a shopping cart",
         "ground_truths": [
           "a person with a shopping cart on a city street ",
           "City dwellers walk by as a homeless man begs for cash.",
@@ -302,7 +304,7 @@
       {
         "image_id": 87038,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000087038.jpg",
-        "prediction": "a skateboarder doing a trick in a parking lot\n",
+        "prediction": "a group of people riding bikes and skateboards in a parking lot",
         "ground_truths": [
           "A person on a skateboard and bike at a skate park.",
           "A man on a skateboard performs a trick at the skate park",
@@ -314,7 +316,7 @@
       {
         "image_id": 174482,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000174482.jpg",
-        "prediction": "a bicycle parked on the side of a sidewalk\n",
+        "prediction": "a blue bike parked on a sidewalk next to a tree",
         "ground_truths": [
           "a blue bike parked on a side walk ",
           "A bicycle is chained to a fixture on a city street",
@@ -326,7 +328,7 @@
       {
         "image_id": 403385,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000403385.jpg",
-        "prediction": "a bathroom with a toilet, shower, sink and fan\n",
+        "prediction": "a bathroom with a toilet, sink, and shower",
         "ground_truths": [
           "A bathroom that has a broken wall in the shower.",
           "A bathroom looks clean but is missing tile at the shower stall.",
@@ -338,7 +340,7 @@
       {
         "image_id": 6818,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000006818.jpg",
-        "prediction": "a bathroom with a toilet and a shower\n",
+        "prediction": "a bathroom with a toilet and a shower",
         "ground_truths": [
           "a couple of buckets in a white room",
           "A bathroom with no toilets and a red and green bucket. ",
@@ -350,7 +352,7 @@
       {
         "image_id": 480985,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000480985.jpg",
-        "prediction": "a motorcycle is on display at a motorcycle show\n",
+        "prediction": "a motorcycle is on display at a show",
         "ground_truths": [
           "The shiny motorcycle has been put on display.",
           "The new motorcycle on display is very shiny.",
@@ -362,7 +364,7 @@
       {
         "image_id": 458054,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000458054.jpg",
-        "prediction": "a row of toilets\n",
+        "prediction": "a row of dirty toilets sitting outside in the dirt",
         "ground_truths": [
           "A row of white toilets sitting on top of a dirt ground.",
           "A bunch of dirty looking white toilets in a row outside.",
@@ -374,7 +376,7 @@
       {
         "image_id": 331352,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000331352.jpg",
-        "prediction": "a toilet with a bidet\n",
+        "prediction": "a toilet with a remote control and a sink",
         "ground_truths": [
           "A small closed toilet in a cramped space.",
           "A tan toilet and sink combination in a small room.",
@@ -386,7 +388,7 @@
       {
         "image_id": 296649,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000296649.jpg",
-        "prediction": "a group of people on motorcycles in a city\n",
+        "prediction": "a group of people on motorcycles on a city street",
         "ground_truths": [
           "People are walking and riding motorcycles on the street",
           "A group of motorists pass very large buildings in asia. ",
@@ -398,7 +400,7 @@
       {
         "image_id": 386912,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000386912.jpg",
-        "prediction": "a woman sitting at a desk\n",
+        "prediction": "a woman sitting at a desk with a computer",
         "ground_truths": [
           "a person sitting at a desk with a keyboard and monitor ",
           "a woman at her desk sits intently and happy",
@@ -410,7 +412,7 @@
       {
         "image_id": 502136,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000502136.jpg",
-        "prediction": "a door with a sign on it\n",
+        "prediction": "a building with a door and a sign on it",
         "ground_truths": [
           "A building wall and pair of doors that are open, along with vases of flowers on the outside of the building.",
           "a building with dirty walls and dirty doors",
@@ -422,7 +424,7 @@
       {
         "image_id": 491497,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000491497.jpg",
-        "prediction": "a white chair in front of a tv\n",
+        "prediction": "a living room with a television, chair, and bookcase",
         "ground_truths": [
           "A fluffy white chair that faces away fro a television.",
           "A pillow covered reading chair in the corner of the living room",
@@ -434,7 +436,7 @@
       {
         "image_id": 184791,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000184791.jpg",
-        "prediction": "a painting of a still life\n",
+        "prediction": "a painting of a still life with oranges and a candle",
         "ground_truths": [
           "A painting of a table with fruit on top of it.",
           "Painting of oranges, a bowl, candle, and a pitcher",
@@ -446,7 +448,7 @@
       {
         "image_id": 348881,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000348881.jpg",
-        "prediction": "a large airplane parked on a runway\n",
+        "prediction": "a large airplane parked on a runway with a ramp",
         "ground_truths": [
           "A large jetliner sitting on top of an airport runway.",
           "Airline employees by an aircraft parked at the gate",
@@ -458,7 +460,7 @@
       {
         "image_id": 289393,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000289393.jpg",
-        "prediction": "a small animal and a giraffe\n",
+        "prediction": "a group of toy animals on a floor",
         "ground_truths": [
           "Set of toy animals sitting in front of a red wooden wagon.",
           "Several toy animals - a bull, giraffe, deer and parakeet.",
@@ -470,7 +472,7 @@
       {
         "image_id": 522713,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000522713.jpg",
-        "prediction": "a bench sitting on a grassy area overlooking the ocean\n",
+        "prediction": "a bench sitting in the grass near the water",
         "ground_truths": [
           " a bench sitting in the grass facing the water and boats ",
           "A wooden bench overlooking a harbor beneath a cloudy sky.",
@@ -482,7 +484,7 @@
       {
         "image_id": 181666,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000181666.jpg",
-        "prediction": "a man is walking with a herd of goats\n",
+        "prediction": "a man standing in front of a herd of goats",
         "ground_truths": [
           "a flock of goats and some men watching them",
           "a man and a large herd of goats in a desert setting.",
@@ -494,7 +496,7 @@
       {
         "image_id": 17627,
         "image_path": "/Users/bytedance/mllm-course-pj1/data/val2017/000000017627.jpg",
-        "prediction": "a city street with a lot of cars and buses\n",
+        "prediction": "a street with a lot of cars parked on it",
         "ground_truths": [
           "Several cars are parked in front of a building.",
           "A green car has parked on the curb in a parking lot",

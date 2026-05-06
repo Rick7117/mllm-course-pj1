@@ -13,14 +13,37 @@ from dataset import COCODataset
 from models import BLIP2Model, BLIPModel, CLIPModel
 
 
+def pooled_features(features):
+    if features.ndim == 3:
+        return features.mean(axis=1)
+    return features
+
+
+def normalize_features(features):
+    norms = np.linalg.norm(features, axis=-1, keepdims=True)
+    return features / np.clip(norms, 1e-12, None)
+
+
 def cosine_similarity_matrix(a, b):
-    a = a / np.linalg.norm(a, axis=1, keepdims=True)
-    b = b / np.linalg.norm(b, axis=1, keepdims=True)
+    a = normalize_features(a)
+    b = normalize_features(b)
+
+    if a.ndim == 3 and b.ndim == 2:
+        similarity = np.einsum("nqd,md->nqm", a, b)
+        return similarity.max(axis=1)
+    if a.ndim == 2 and b.ndim == 3:
+        similarity = np.einsum("nd,mqd->nmq", a, b)
+        return similarity.max(axis=2)
+    if a.ndim == 3 and b.ndim == 3:
+        similarity = np.einsum("nqd,mrd->nqmr", a, b)
+        return similarity.max(axis=(1, 3))
+
     return a @ b.T
 
 
 def extract_visualization_embeddings(model, dataset, model_name, num_samples=500):
-    cache_path = os.path.join(EMBEDDINGS_DIR, f"{model_name}_viz_embeddings.pkl")
+    cache_name = getattr(model, "cache_name", model_name.lower())
+    cache_path = os.path.join(EMBEDDINGS_DIR, f"{cache_name}_{num_samples}_viz_embeddings.pkl")
 
     if os.path.exists(cache_path):
         with open(cache_path, "rb") as f:
@@ -61,12 +84,16 @@ def analyze_embeddings(image_features, text_features):
     nearest_text_index = np.argmax(similarity, axis=1)
     nearest_image_index = np.argmax(similarity, axis=0)
 
-    image_centroid = image_features.mean(axis=0)
-    text_centroid = text_features.mean(axis=0)
+    pooled_image_features = pooled_features(image_features)
+    pooled_text_features = pooled_features(text_features)
+
+    image_centroid = pooled_image_features.mean(axis=0)
+    text_centroid = pooled_text_features.mean(axis=0)
     centroid_distance = float(np.linalg.norm(image_centroid - text_centroid))
 
     shuffled_text_features = np.roll(text_features, shift=1, axis=0)
-    shuffled_similarity = np.sum(image_features * shuffled_text_features, axis=1)
+    shuffled_similarity_matrix = cosine_similarity_matrix(image_features, shuffled_text_features)
+    shuffled_similarity = np.diag(shuffled_similarity_matrix)
 
     return {
         "avg_pair_similarity": float(pair_similarity.mean()),
@@ -79,6 +106,8 @@ def analyze_embeddings(image_features, text_features):
 
 
 def visualize_embeddings(model_name, image_features, text_features, labels, method="pca"):
+    image_features = pooled_features(image_features)
+    text_features = pooled_features(text_features)
     all_features = np.vstack([image_features, text_features])
     all_labels = np.array(["image"] * len(image_features) + ["text"] * len(text_features))
 

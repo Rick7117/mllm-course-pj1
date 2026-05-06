@@ -22,15 +22,7 @@ def run_captioning():
     output_path = os.path.join(RESULTS_DIR, "captioning_results.json")
     results = {}
 
-    if os.path.exists(output_path):
-        with open(output_path, "r") as f:
-            results = json.load(f)
-
     for model_name, model in models.items():
-        if model_name in results:
-            print(f"\nSkipping {model_name}, existing results found.")
-            continue
-
         print(f"\nProcessing {model_name}...")
 
         predictions = {}
@@ -60,6 +52,7 @@ def run_captioning():
 
         metrics = evaluator.evaluate(predictions, ground_truths)
         results[model_name] = {
+            "model_cache": getattr(model, "cache_name", model_name.lower()),
             "num_samples": len(predictions),
             "metrics": metrics,
             "qualitative_examples": qualitative_examples,

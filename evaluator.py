@@ -5,8 +5,15 @@ from scipy.spatial.distance import cdist
 
 class RetrievalEvaluator:
     @staticmethod
+    def compute_similarity_matrix(image_features, text_features):
+        if image_features.ndim == 3:
+            similarity = np.einsum("iqd,td->iqt", image_features, text_features)
+            return similarity.max(axis=1)
+        return 1 - cdist(image_features, text_features, metric='cosine')
+
+    @staticmethod
     def compute_recall_at_k(image_features, text_features, image_to_text_mapping, k_list=[1, 5, 10]):
-        similarity_matrix = 1 - cdist(image_features, text_features, metric='cosine')
+        similarity_matrix = RetrievalEvaluator.compute_similarity_matrix(image_features, text_features)
         
         image_to_text_recall = {k: 0 for k in k_list}
         text_to_image_recall = {k: 0 for k in k_list}

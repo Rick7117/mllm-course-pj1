@@ -8,7 +8,8 @@ from models import CLIPModel, BLIPModel, BLIP2Model
 from evaluator import RetrievalEvaluator
 
 def extract_embeddings(model, dataset, model_name, max_samples=1000):
-    cache_path = os.path.join(EMBEDDINGS_DIR, f'{model_name}_embeddings.pkl')
+    cache_name = getattr(model, "cache_name", model_name.lower())
+    cache_path = os.path.join(EMBEDDINGS_DIR, f'{cache_name}_{max_samples}_embeddings.pkl')
     
     if os.path.exists(cache_path):
         with open(cache_path, 'rb') as f:
@@ -77,6 +78,7 @@ def run_retrieval():
         )
         
         results[model_name] = {
+            'model_cache': getattr(model, "cache_name", model_name.lower()),
             'Image-to-Text': it_recall,
             'Text-to-Image': ti_recall
         }

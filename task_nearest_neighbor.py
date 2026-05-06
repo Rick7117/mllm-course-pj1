@@ -11,8 +11,14 @@ from dataset import COCODataset
 from models import BLIP2Model, BLIPModel, CLIPModel
 
 
+def normalize_features(features):
+    norms = np.linalg.norm(features, axis=-1, keepdims=True)
+    return features / np.clip(norms, 1e-12, None)
+
+
 def extract_nn_embeddings(model, dataset, model_name, num_samples=1000):
-    cache_path = os.path.join(EMBEDDINGS_DIR, f"{model_name}_nn_embeddings.pkl")
+    cache_name = getattr(model, "cache_name", model_name.lower())
+    cache_path = os.path.join(EMBEDDINGS_DIR, f"{cache_name}_{num_samples}_nn_embeddings.pkl")
 
     if os.path.exists(cache_path):
         with open(cache_path, "rb") as f:
@@ -51,7 +57,18 @@ def extract_nn_embeddings(model, dataset, model_name, num_samples=1000):
 
 
 def find_nearest_neighbors(query_features, target_features, k=5):
-    distances = cdist(query_features, target_features, metric="cosine")
+    query_features = normalize_features(query_features)
+    target_features = normalize_features(target_features)
+
+    if query_features.ndim == 3 and target_features.ndim == 2:
+        similarity = np.einsum("nqd,md->nqm", query_features, target_features).max(axis=1)
+        distances = 1 - similarity
+    elif query_features.ndim == 2 and target_features.ndim == 3:
+        similarity = np.einsum("nd,mqd->nmq", query_features, target_features).max(axis=2)
+        distances = 1 - similarity
+    else:
+        distances = cdist(query_features, target_features, metric="cosine")
+
     nearest_indices = np.argsort(distances, axis=1)[:, :k]
     nearest_distances = np.take_along_axis(distances, nearest_indices, axis=1)
     return nearest_indices, nearest_distances

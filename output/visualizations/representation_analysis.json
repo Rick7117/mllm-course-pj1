@@ -1,26 +1,26 @@
 {
   "CLIP": {
-    "avg_pair_similarity": 0.2979526221752167,
-    "median_pair_similarity": 0.3008645176887512,
-    "avg_random_pair_similarity": 0.0721224844455719,
-    "image_to_text_top1_alignment": 0.726,
-    "text_to_image_top1_alignment": 0.706,
-    "centroid_distance": 0.7745699882507324
+    "avg_pair_similarity": 0.3059998154640198,
+    "median_pair_similarity": 0.3059631586074829,
+    "avg_random_pair_similarity": 0.18256106972694397,
+    "image_to_text_top1_alignment": 0.606,
+    "text_to_image_top1_alignment": 0.59,
+    "centroid_distance": 0.8225071430206299
   },
   "BLIP": {
     "avg_pair_similarity": 0.47425341606140137,
     "median_pair_similarity": 0.47726529836654663,
-    "avg_random_pair_similarity": 0.21973946690559387,
+    "avg_random_pair_similarity": 0.21973949670791626,
     "image_to_text_top1_alignment": 0.864,
     "text_to_image_top1_alignment": 0.854,
     "centroid_distance": 0.6714262962341309
   },
   "BLIP2": {
-    "avg_pair_similarity": -0.016614891588687897,
-    "median_pair_similarity": -0.01594359055161476,
-    "avg_random_pair_similarity": -0.024031227454543114,
-    "image_to_text_top1_alignment": 0.03,
-    "text_to_image_top1_alignment": 0.032,
-    "centroid_distance": 1.3149049282073975
+    "avg_pair_similarity": 0.4996892511844635,
+    "median_pair_similarity": 0.505811333656311,
+    "avg_random_pair_similarity": 0.2724718749523163,
+    "image_to_text_top1_alignment": 0.892,
+    "text_to_image_top1_alignment": 0.854,
+    "centroid_distance": 0.7182202935218811
   }
 }
